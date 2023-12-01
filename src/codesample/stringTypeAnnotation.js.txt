@@ -1,0 +1,5 @@
+let name:<mark>string</mark>;
+
+function calc(str:<mark>string</mark>):<mark>string</mark> {
+	//...
+}

@@ -1,0 +1,5 @@
+let name:<mark>any</mark>;
+
+function foo(arg:<mark>any</mark>):<mark>any</mark>{
+    //...
+}
