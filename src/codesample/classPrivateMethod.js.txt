@@ -1,0 +1,14 @@
+class Klass {
+  
+  #a=3
+  
+  <mark>#foo() {
+    //..
+  }</mark>
+  
+  b=4
+  
+  bar() {
+    //...
+  }
+}

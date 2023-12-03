@@ -1,11 +1,9 @@
-import { ReactElement } from "react";
-import Image from "next/image";
+import { FC, PropsWithChildren, ReactElement } from "react";
 import { readFileSync } from "fs";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import typescript from "highlight.js/lib/languages/typescript";
 import "highlight.js/styles/tokyo-night-dark.min.css";
-import copyIcon from "./copy-svgrepo-com.svg";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("typescript", typescript);
@@ -32,17 +30,9 @@ function hl(code: string, lang: string): string {
   return value;
 }
 
-export const Code = ({
-  file,
-  key,
-  language = "typescript",
-  children,
-}: {
-  file?: string;
-  key?: string;
-  language: string;
-  children?: ReactElement;
-}) => {
+export const Code: FC<
+  PropsWithChildren<{ file?: string; key?: string; language: string }>
+> = ({ file, key, language = "typescript", children }) => {
   let highlightedCode = "";
   if (typeof children === "string") {
     highlightedCode = hl(children, language);

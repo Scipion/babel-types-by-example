@@ -227,21 +227,22 @@ function printAliasKeys(key, readme) {
 }
 readme.push("### Node Builders");
 readme.push("");
+let contentTable = [];
 Object.keys(t.BUILDER_KEYS)
   .sort()
   .forEach(function (key) {
-    readme.push("#### " + toFunctionName(key));
+    contentTable.push(
+      ` - [${toFunctionName(key)}](#${key.toLocaleLowerCase()})`
+    );
+    readme.push(
+      "#### " + toFunctionName(key) + "[#](#" + key.toLowerCase() + ")"
+    );
     readme.push("");
     readme.push(
       `<Code language="javascript">${
         "t." + toFunctionName(key) + "(" + t.BUILDER_KEYS[key].join(", ") + ");"
       }</Code>`
     );
-    readme.push('```js title="JavaScript"');
-    readme.push(
-      "t." + toFunctionName(key) + "(" + t.BUILDER_KEYS[key].join(", ") + ");"
-    );
-    readme.push("```");
     readme.push(`*${key}*`);
     readme.push(
       `<Code file="${
@@ -265,6 +266,14 @@ Object.keys(t.BUILDER_KEYS)
     readme.push("---");
     readme.push("");
   });
+contentTable.push("");
+readme.unshift(
+  'import { Sidebar } from "@/components/Sidebar";',
+  "",
+  "<Sidebar>",
+  ...contentTable,
+  "</Sidebar>"
+);
 
 function generateMapAliasToNodeTypes() {
   const result = new Map();

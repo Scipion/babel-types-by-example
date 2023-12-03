@@ -1,0 +1,9 @@
+<mark>let nums = [100, 200, 300];</mark>
+
+<mark>const babelRocks = true;</mark>
+
+<mark>var foo='lorem ipsum dolor sit amet';</mark>
+
+<mark>let empty:boolean;</mark>
+
+<mark>var a, b=2, c, d;</mark>

@@ -1,0 +1,3 @@
+var <mark>foo</mark>='lorem ipsum dolor sit amet';
+
+`a ${<mark>b</mark>} c`

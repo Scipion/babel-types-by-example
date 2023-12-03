@@ -8,7 +8,7 @@ This is a [Next.js](https://nextjs.org/) app to enrich the official documentatio
 
 ## Motivation
 
-On the process of learing babel and how to develop babel plugins I've used [https://astexplorer.net/] (as I think everybody learing does) and checking back end forth the original babel documentation.
+On the process of learing babel and how to develop babel plugins I've used [astexplorer.net](https://astexplorer.net/) (as I think everybody learing does) and checking back end forth the original babel documentation.
 
 At some point I thought it would be nice to have them both togueder guided by examples.
 
@@ -18,6 +18,7 @@ I'm using _pnpm_ to build the site and _bun_ to build the main page in _src/app/
 
 ```bash
 pnpm run docs # using bun, check script in package.json
+
 pnpm run build
 ```
 
