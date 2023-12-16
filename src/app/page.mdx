@@ -1,4 +1,5 @@
 import { Sidebar } from "@/components/Sidebar";
+import { Main } from "@/components/Main";
 
 <Sidebar>
  - [anyTypeAnnotation](#anytypeannotation)
@@ -253,6 +254,7 @@ import { Sidebar } from "@/components/Sidebar";
  - [yieldExpression](#yieldexpression)
 
 </Sidebar>
+<Main>
 import { Code } from "@/components/Code";
 
 # @babel/types by example 
@@ -304,7 +306,7 @@ See also `t.isArgumentPlaceholder(node, opts)` and `t.assertArgumentPlaceholder(
 See also `t.isArrayExpression(node, opts)` and `t.assertArrayExpression(node, opts)`.
 
 AST Node `ArrayExpression` shape:
-- `elements`: `Array<null | Expression | SpreadElement>` (default: `[]`)
+- `elements`: <span className="code">Array\<null | [Expression](#expression) | [SpreadElement](#spreadelement)\></span> (default: `[]`)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -319,10 +321,10 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isArrayPattern(node, opts)` and `t.assertArrayPattern(node, opts)`.
 
 AST Node `ArrayPattern` shape:
-- `elements`: `Array<null | PatternLike | LVal>` (required)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
+- `elements`: <span className="code">Array\<null | [PatternLike](#patternlike) | [LVal](#lval)\></span> (required)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Pattern`](#pattern), [`PatternLike`](#patternlike), [`LVal`](#lval)
 
@@ -337,7 +339,7 @@ Aliases: [`Standardized`](#standardized), [`Pattern`](#pattern), [`PatternLike`]
 See also `t.isArrayTypeAnnotation(node, opts)` and `t.assertArrayTypeAnnotation(node, opts)`.
 
 AST Node `ArrayTypeAnnotation` shape:
-- `elementType`: `0FlowType` (required)
+- `elementType`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -352,14 +354,14 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isArrowFunctionExpression(node, opts)` and `t.assertArrowFunctionExpression(node, opts)`.
 
 AST Node `ArrowFunctionExpression` shape:
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement>` (required)
-- `body`: `0BlockStatement | 0Expression` (required)
-- `async`: `boolean` (default: `false`)
-- `expression`: `boolean` (required)
-- `generator`: `boolean` (default: `false`, excluded from builder function)
-- `predicate`: `0DeclaredPredicate | 0InferredPredicate` (default: `null`, excluded from builder function)
-- `returnType`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement)</span>\></span> (required)
+- `body`: <span className="code">[BlockStatement](#blockstatement) | [Expression](#expression)</span> (required)
+- `async`: boolean (default: `false`)
+- `expression`: boolean (required)
+- `generator`: boolean (default: `false`, excluded from builder function)
+- `predicate`: <span className="code">[DeclaredPredicate](#declaredpredicate) | [InferredPredicate](#inferredpredicate)</span> (default: `null`, excluded from builder function)
+- `returnType`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Function`](#function), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent), [`Expression`](#expression), [`Pureish`](#pureish)
 
@@ -374,9 +376,9 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Function`](
 See also `t.isAssignmentExpression(node, opts)` and `t.assertAssignmentExpression(node, opts)`.
 
 AST Node `AssignmentExpression` shape:
-- `operator`: `string` (required)
-- `left`: `0LVal | 0OptionalMemberExpression` (required)
-- `right`: `0Expression` (required)
+- `operator`: string (required)
+- `left`: <span className="code">[LVal](#lval) | [OptionalMemberExpression](#optionalmemberexpression)</span> (required)
+- `right`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -391,11 +393,11 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isAssignmentPattern(node, opts)` and `t.assertAssignmentPattern(node, opts)`.
 
 AST Node `AssignmentPattern` shape:
-- `left`: `0Identifier | 0ObjectPattern | 0ArrayPattern | 0MemberExpression | 0TSAsExpression | 0TSSatisfiesExpression | 0TSTypeAssertion | 0TSNonNullExpression` (required)
-- `right`: `0Expression` (required)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
+- `left`: <span className="code">[Identifier](#identifier) | [ObjectPattern](#objectpattern) | [ArrayPattern](#arraypattern) | [MemberExpression](#memberexpression) | [TSAsExpression](#tsasexpression) | [TSSatisfiesExpression](#tssatisfiesexpression) | [TSTypeAssertion](#tstypeassertion) | [TSNonNullExpression](#tsnonnullexpression)</span> (required)
+- `right`: <span className="code">[Expression](#expression)</span> (required)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Pattern`](#pattern), [`PatternLike`](#patternlike), [`LVal`](#lval)
 
@@ -410,7 +412,7 @@ Aliases: [`Standardized`](#standardized), [`Pattern`](#pattern), [`PatternLike`]
 See also `t.isAwaitExpression(node, opts)` and `t.assertAwaitExpression(node, opts)`.
 
 AST Node `AwaitExpression` shape:
-- `argument`: `0Expression` (required)
+- `argument`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Terminatorless`](#terminatorless)
 
@@ -425,7 +427,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Termina
 See also `t.isBigIntLiteral(node, opts)` and `t.assertBigIntLiteral(node, opts)`.
 
 AST Node `BigIntLiteral` shape:
-- `value`: `string` (required)
+- `value`: string (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish`](#pureish), [`Literal`](#literal), [`Immutable`](#immutable)
 
@@ -441,8 +443,8 @@ See also `t.isBinaryExpression(node, opts)` and `t.assertBinaryExpression(node, 
 
 AST Node `BinaryExpression` shape:
 - `operator`: `"+" | "-" | "/" | "%" | "*" | "**" | "&" | "|" | ">>" | ">>>" | "<<" | "^" | "==" | "===" | "!=" | "!==" | "in" | "instanceof" | ">" | "<" | ">=" | "<=" | "|>"` (required)
-- `left`: `0Expression | 0PrivateName` (required)
-- `right`: `0Expression` (required)
+- `left`: <span className="code">[Expression](#expression) | [PrivateName](#privatename)</span> (required)
+- `right`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Binary`](#binary), [`Expression`](#expression)
 
@@ -457,8 +459,8 @@ Aliases: [`Standardized`](#standardized), [`Binary`](#binary), [`Expression`](#e
 See also `t.isBindExpression(node, opts)` and `t.assertBindExpression(node, opts)`.
 
 AST Node `BindExpression` shape:
-- `object`: `0Expression` (required)
-- `callee`: `0Expression` (required)
+- `object`: <span className="code">[Expression](#expression)</span> (required)
+- `callee`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Expression`](#expression)
 
@@ -473,8 +475,8 @@ Aliases: [`Expression`](#expression)
 See also `t.isBlockStatement(node, opts)` and `t.assertBlockStatement(node, opts)`.
 
 AST Node `BlockStatement` shape:
-- `body`: `Array<0Statement>` (required)
-- `directives`: `Array<0Directive>` (default: `[]`)
+- `body`: <span className="code">Array\<<span className="code">[Statement](#statement)</span>\></span> (required)
+- `directives`: <span className="code">Array\<<span className="code">[Directive](#directive)</span>\></span> (default: `[]`)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent`](#blockparent), [`Block`](#block), [`Statement`](#statement)
 
@@ -489,7 +491,7 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent
 See also `t.isBooleanLiteral(node, opts)` and `t.assertBooleanLiteral(node, opts)`.
 
 AST Node `BooleanLiteral` shape:
-- `value`: `boolean` (required)
+- `value`: boolean (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish`](#pureish), [`Literal`](#literal), [`Immutable`](#immutable)
 
@@ -504,7 +506,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish
 See also `t.isBooleanLiteralTypeAnnotation(node, opts)` and `t.assertBooleanLiteralTypeAnnotation(node, opts)`.
 
 AST Node `BooleanLiteralTypeAnnotation` shape:
-- `value`: `boolean` (required)
+- `value`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -531,7 +533,7 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype), [`FlowBaseAnnotation`](#flowb
 See also `t.isBreakStatement(node, opts)` and `t.assertBreakStatement(node, opts)`.
 
 AST Node `BreakStatement` shape:
-- `label`: `0Identifier` (default: `null`)
+- `label`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Terminatorless`](#terminatorless), [`CompletionStatement`](#completionstatement)
 
@@ -546,11 +548,11 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Terminato
 See also `t.isCallExpression(node, opts)` and `t.assertCallExpression(node, opts)`.
 
 AST Node `CallExpression` shape:
-- `callee`: `0Expression | 0Super | 0V8IntrinsicIdentifier` (required)
-- `arguments`: `Array<0Expression | 0SpreadElement | 0JSXNamespacedName | 0ArgumentPlaceholder>` (required)
+- `callee`: <span className="code">[Expression](#expression) | [Super](#super) | [V8IntrinsicIdentifier](#v8intrinsicidentifier)</span> (required)
+- `arguments`: <span className="code">Array\<<span className="code">[Expression](#expression) | [SpreadElement](#spreadelement) | [JSXNamespacedName](#jsxnamespacedname) | [ArgumentPlaceholder](#argumentplaceholder)</span>\></span> (required)
 - `optional`: `true | false` (default: `null`, excluded from builder function)
-- `typeArguments`: `0TypeParameterInstantiation` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`, excluded from builder function)
+- `typeArguments`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -565,8 +567,8 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isCatchClause(node, opts)` and `t.assertCatchClause(node, opts)`.
 
 AST Node `CatchClause` shape:
-- `param`: `0Identifier | 0ArrayPattern | 0ObjectPattern` (default: `null`)
-- `body`: `0BlockStatement` (required)
+- `param`: <span className="code">[Identifier](#identifier) | [ArrayPattern](#arraypattern) | [ObjectPattern](#objectpattern)</span> (default: `null`)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent`](#blockparent)
 
@@ -581,20 +583,20 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent
 See also `t.isClassAccessorProperty(node, opts)` and `t.assertClassAccessorProperty(node, opts)`.
 
 AST Node `ClassAccessorProperty` shape:
-- `key`: `0Identifier | 0StringLiteral | 0NumericLiteral | 0BigIntLiteral | 0Expression | 0PrivateName` (required)
-- `value`: `0Expression` (default: `null`)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`)
-- `decorators`: `Array<0Decorator>` (default: `null`)
-- `computed`: `boolean` (default: `false`)
-- `static`: `boolean` (default: `false`)
-- `abstract`: `boolean` (default: `null`, excluded from builder function)
+- `key`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral) | [NumericLiteral](#numericliteral) | [BigIntLiteral](#bigintliteral) | [Expression](#expression) | [PrivateName](#privatename)</span> (required)
+- `value`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`)
+- `computed`: boolean (default: `false`)
+- `static`: boolean (default: `false`)
+- `abstract`: boolean (default: `null`, excluded from builder function)
 - `accessibility`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
-- `definite`: `boolean` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `override`: `boolean` (default: `false`, excluded from builder function)
-- `readonly`: `boolean` (default: `null`, excluded from builder function)
-- `variance`: `0Variance` (default: `null`, excluded from builder function)
+- `declare`: boolean (default: `null`, excluded from builder function)
+- `definite`: boolean (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `override`: boolean (default: `false`, excluded from builder function)
+- `readonly`: boolean (default: `null`, excluded from builder function)
+- `variance`: <span className="code">[Variance](#variance)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Property`](#property), [`Accessor`](#accessor)
 
@@ -609,7 +611,7 @@ Aliases: [`Standardized`](#standardized), [`Property`](#property), [`Accessor`](
 See also `t.isClassBody(node, opts)` and `t.assertClassBody(node, opts)`.
 
 AST Node `ClassBody` shape:
-- `body`: `Array<0ClassMethod | 0ClassPrivateMethod | 0ClassProperty | 0ClassPrivateProperty | 0ClassAccessorProperty | 0TSDeclareMethod | 0TSIndexSignature | 0StaticBlock>` (required)
+- `body`: <span className="code">Array\<<span className="code">[ClassMethod](#classmethod) | [ClassPrivateMethod](#classprivatemethod) | [ClassProperty](#classproperty) | [ClassPrivateProperty](#classprivateproperty) | [ClassAccessorProperty](#classaccessorproperty) | [TSDeclareMethod](#tsdeclaremethod) | [TSIndexSignature](#tsindexsignature) | [StaticBlock](#staticblock)</span>\></span> (required)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -624,16 +626,16 @@ Aliases: [`Standardized`](#standardized)
 See also `t.isClassDeclaration(node, opts)` and `t.assertClassDeclaration(node, opts)`.
 
 AST Node `ClassDeclaration` shape:
-- `id`: `0Identifier` (default: `null`)
-- `superClass`: `0Expression` (default: `null`)
-- `body`: `0ClassBody` (required)
-- `decorators`: `Array<0Decorator>` (default: `null`)
-- `abstract`: `boolean` (default: `null`, excluded from builder function)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
-- `implements`: `Array<0TSExpressionWithTypeArguments | 0ClassImplements>` (default: `null`, excluded from builder function)
-- `mixins`: `0InterfaceExtends` (default: `null`, excluded from builder function)
-- `superTypeParameters`: `0TypeParameterInstantiation | 0TSTypeParameterInstantiation` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
+- `superClass`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `body`: <span className="code">[ClassBody](#classbody)</span> (required)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`)
+- `abstract`: boolean (default: `null`, excluded from builder function)
+- `declare`: boolean (default: `null`, excluded from builder function)
+- `implements`: <span className="code">Array\<<span className="code">[TSExpressionWithTypeArguments](#tsexpressionwithtypearguments) | [ClassImplements](#classimplements)</span>\></span> (default: `null`, excluded from builder function)
+- `mixins`: <span className="code">[InterfaceExtends](#interfaceextends)</span> (default: `null`, excluded from builder function)
+- `superTypeParameters`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation) | [TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Class`](#class), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -648,14 +650,14 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Class`](#cl
 See also `t.isClassExpression(node, opts)` and `t.assertClassExpression(node, opts)`.
 
 AST Node `ClassExpression` shape:
-- `id`: `0Identifier` (default: `null`)
-- `superClass`: `0Expression` (default: `null`)
-- `body`: `0ClassBody` (required)
-- `decorators`: `Array<0Decorator>` (default: `null`)
-- `implements`: `Array<0TSExpressionWithTypeArguments | 0ClassImplements>` (default: `null`, excluded from builder function)
-- `mixins`: `0InterfaceExtends` (default: `null`, excluded from builder function)
-- `superTypeParameters`: `0TypeParameterInstantiation | 0TSTypeParameterInstantiation` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
+- `superClass`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `body`: <span className="code">[ClassBody](#classbody)</span> (required)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`)
+- `implements`: <span className="code">Array\<<span className="code">[TSExpressionWithTypeArguments](#tsexpressionwithtypearguments) | [ClassImplements](#classimplements)</span>\></span> (default: `null`, excluded from builder function)
+- `mixins`: <span className="code">[InterfaceExtends](#interfaceextends)</span> (default: `null`, excluded from builder function)
+- `superTypeParameters`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation) | [TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Class`](#class), [`Expression`](#expression)
 
@@ -670,8 +672,8 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Class`](#cl
 See also `t.isClassImplements(node, opts)` and `t.assertClassImplements(node, opts)`.
 
 AST Node `ClassImplements` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterInstantiation` (default: `null`)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`Flow`](#flow)
 
@@ -688,20 +690,20 @@ See also `t.isClassMethod(node, opts)` and `t.assertClassMethod(node, opts)`.
 AST Node `ClassMethod` shape:
 - `kind`: `"get" | "set" | "method" | "constructor"` (default: `'method'`)
 - `key`: if computed then `Expression` else `Identifier | Literal` (required)
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement | 0TSParameterProperty>` (required)
-- `body`: `0BlockStatement` (required)
-- `computed`: `boolean` (default: `false`)
-- `static`: `boolean` (default: `false`)
-- `generator`: `boolean` (default: `false`)
-- `async`: `boolean` (default: `false`)
-- `abstract`: `boolean` (default: `null`, excluded from builder function)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement) | [TSParameterProperty](#tsparameterproperty)</span>\></span> (required)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
+- `computed`: boolean (default: `false`)
+- `static`: boolean (default: `false`)
+- `generator`: boolean (default: `false`)
+- `async`: boolean (default: `false`)
+- `abstract`: boolean (default: `null`, excluded from builder function)
 - `access`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
 - `accessibility`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `override`: `boolean` (default: `false`, excluded from builder function)
-- `returnType`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `override`: boolean (default: `false`, excluded from builder function)
+- `returnType`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Function`](#function), [`Scopable`](#scopable), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent), [`Method`](#method)
 
@@ -717,21 +719,21 @@ See also `t.isClassPrivateMethod(node, opts)` and `t.assertClassPrivateMethod(no
 
 AST Node `ClassPrivateMethod` shape:
 - `kind`: `"get" | "set" | "method"` (default: `'method'`)
-- `key`: `0PrivateName` (required)
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement | 0TSParameterProperty>` (required)
-- `body`: `0BlockStatement` (required)
-- `static`: `boolean` (default: `false`)
-- `abstract`: `boolean` (default: `null`, excluded from builder function)
+- `key`: <span className="code">[PrivateName](#privatename)</span> (required)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement) | [TSParameterProperty](#tsparameterproperty)</span>\></span> (required)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
+- `static`: boolean (default: `false`)
+- `abstract`: boolean (default: `null`, excluded from builder function)
 - `access`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
 - `accessibility`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
-- `async`: `boolean` (default: `false`, excluded from builder function)
+- `async`: boolean (default: `false`, excluded from builder function)
 - `computed`: 'false' (default: `false`, excluded from builder function)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `generator`: `boolean` (default: `false`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `override`: `boolean` (default: `false`, excluded from builder function)
-- `returnType`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `generator`: boolean (default: `false`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `override`: boolean (default: `false`, excluded from builder function)
+- `returnType`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Function`](#function), [`Scopable`](#scopable), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent), [`Method`](#method), [`Private`](#private)
 
@@ -746,14 +748,14 @@ Aliases: [`Standardized`](#standardized), [`Function`](#function), [`Scopable`](
 See also `t.isClassPrivateProperty(node, opts)` and `t.assertClassPrivateProperty(node, opts)`.
 
 AST Node `ClassPrivateProperty` shape:
-- `key`: `0PrivateName` (required)
-- `value`: `0Expression` (default: `null`)
-- `decorators`: `Array<0Decorator>` (default: `null`)
-- `static`: `boolean` (default: `false`)
-- `definite`: `boolean` (default: `null`, excluded from builder function)
-- `readonly`: `boolean` (default: `null`, excluded from builder function)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
-- `variance`: `0Variance` (default: `null`, excluded from builder function)
+- `key`: <span className="code">[PrivateName](#privatename)</span> (required)
+- `value`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`)
+- `static`: boolean (default: `false`)
+- `definite`: boolean (default: `null`, excluded from builder function)
+- `readonly`: boolean (default: `null`, excluded from builder function)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
+- `variance`: <span className="code">[Variance](#variance)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Property`](#property), [`Private`](#private)
 
@@ -776,20 +778,20 @@ Aliases: [`Standardized`](#standardized), [`Property`](#property), [`Private`](#
 See also `t.isClassProperty(node, opts)` and `t.assertClassProperty(node, opts)`.
 
 AST Node `ClassProperty` shape:
-- `key`: `0Identifier | 0StringLiteral | 0NumericLiteral | 0BigIntLiteral | 0Expression` (required)
-- `value`: `0Expression` (default: `null`)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`)
-- `decorators`: `Array<0Decorator>` (default: `null`)
-- `computed`: `boolean` (default: `false`)
-- `static`: `boolean` (default: `false`)
-- `abstract`: `boolean` (default: `null`, excluded from builder function)
+- `key`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral) | [NumericLiteral](#numericliteral) | [BigIntLiteral](#bigintliteral) | [Expression](#expression)</span> (required)
+- `value`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`)
+- `computed`: boolean (default: `false`)
+- `static`: boolean (default: `false`)
+- `abstract`: boolean (default: `null`, excluded from builder function)
 - `accessibility`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
-- `definite`: `boolean` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `override`: `boolean` (default: `false`, excluded from builder function)
-- `readonly`: `boolean` (default: `null`, excluded from builder function)
-- `variance`: `0Variance` (default: `null`, excluded from builder function)
+- `declare`: boolean (default: `null`, excluded from builder function)
+- `definite`: boolean (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `override`: boolean (default: `false`, excluded from builder function)
+- `readonly`: boolean (default: `null`, excluded from builder function)
+- `variance`: <span className="code">[Variance](#variance)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Property`](#property)
 
@@ -804,9 +806,9 @@ Aliases: [`Standardized`](#standardized), [`Property`](#property)
 See also `t.isConditionalExpression(node, opts)` and `t.assertConditionalExpression(node, opts)`.
 
 AST Node `ConditionalExpression` shape:
-- `test`: `0Expression` (required)
-- `consequent`: `0Expression` (required)
-- `alternate`: `0Expression` (required)
+- `test`: <span className="code">[Expression](#expression)</span> (required)
+- `consequent`: <span className="code">[Expression](#expression)</span> (required)
+- `alternate`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Conditional`](#conditional)
 
@@ -821,7 +823,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Conditi
 See also `t.isContinueStatement(node, opts)` and `t.assertContinueStatement(node, opts)`.
 
 AST Node `ContinueStatement` shape:
-- `label`: `0Identifier` (default: `null`)
+- `label`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Terminatorless`](#terminatorless), [`CompletionStatement`](#completionstatement)
 
@@ -848,7 +850,7 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement)
 See also `t.isDecimalLiteral(node, opts)` and `t.assertDecimalLiteral(node, opts)`.
 
 AST Node `DecimalLiteral` shape:
-- `value`: `string` (required)
+- `value`: string (required)
 
 Aliases: [`Expression`](#expression), [`Pureish`](#pureish), [`Literal`](#literal), [`Immutable`](#immutable)
 
@@ -863,12 +865,12 @@ Aliases: [`Expression`](#expression), [`Pureish`](#pureish), [`Literal`](#litera
 See also `t.isDeclareClass(node, opts)` and `t.assertDeclareClass(node, opts)`.
 
 AST Node `DeclareClass` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `extends`: `Array<0InterfaceExtends>` (default: `null`)
-- `body`: `0ObjectTypeAnnotation` (required)
-- `implements`: `Array<0ClassImplements>` (default: `null`, excluded from builder function)
-- `mixins`: `Array<0InterfaceExtends>` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `extends`: <span className="code">Array\<<span className="code">[InterfaceExtends](#interfaceextends)</span>\></span> (default: `null`)
+- `body`: <span className="code">[ObjectTypeAnnotation](#objecttypeannotation)</span> (required)
+- `implements`: <span className="code">Array\<<span className="code">[ClassImplements](#classimplements)</span>\></span> (default: `null`, excluded from builder function)
+- `mixins`: <span className="code">Array\<<span className="code">[InterfaceExtends](#interfaceextends)</span>\></span> (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -883,7 +885,7 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareExportAllDeclaration(node, opts)` and `t.assertDeclareExportAllDeclaration(node, opts)`.
 
 AST Node `DeclareExportAllDeclaration` shape:
-- `source`: `0StringLiteral` (required)
+- `source`: <span className="code">[StringLiteral](#stringliteral)</span> (required)
 - `exportKind`: `"type" | "value"` (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
@@ -899,10 +901,10 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareExportDeclaration(node, opts)` and `t.assertDeclareExportDeclaration(node, opts)`.
 
 AST Node `DeclareExportDeclaration` shape:
-- `declaration`: `0Flow` (default: `null`)
-- `specifiers`: `Array<0ExportSpecifier | 0ExportNamespaceSpecifier>` (default: `null`)
-- `source`: `0StringLiteral` (default: `null`)
-- `default`: `boolean` (default: `null`, excluded from builder function)
+- `declaration`: <span className="code">[Flow](#flow)</span> (default: `null`)
+- `specifiers`: <span className="code">Array\<<span className="code">[ExportSpecifier](#exportspecifier) | [ExportNamespaceSpecifier](#exportnamespacespecifier)</span>\></span> (default: `null`)
+- `source`: <span className="code">[StringLiteral](#stringliteral)</span> (default: `null`)
+- `default`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -917,8 +919,8 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareFunction(node, opts)` and `t.assertDeclareFunction(node, opts)`.
 
 AST Node `DeclareFunction` shape:
-- `id`: `0Identifier` (required)
-- `predicate`: `0DeclaredPredicate` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `predicate`: <span className="code">[DeclaredPredicate](#declaredpredicate)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -933,10 +935,10 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareInterface(node, opts)` and `t.assertDeclareInterface(node, opts)`.
 
 AST Node `DeclareInterface` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `extends`: `Array<0InterfaceExtends>` (default: `null`)
-- `body`: `0ObjectTypeAnnotation` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `extends`: <span className="code">Array\<<span className="code">[InterfaceExtends](#interfaceextends)</span>\></span> (default: `null`)
+- `body`: <span className="code">[ObjectTypeAnnotation](#objecttypeannotation)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -951,8 +953,8 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareModule(node, opts)` and `t.assertDeclareModule(node, opts)`.
 
 AST Node `DeclareModule` shape:
-- `id`: `0Identifier | 0StringLiteral` (required)
-- `body`: `0BlockStatement` (required)
+- `id`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral)</span> (required)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
 - `kind`: `"CommonJS" | "ES"` (default: `null`)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
@@ -968,7 +970,7 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareModuleExports(node, opts)` and `t.assertDeclareModuleExports(node, opts)`.
 
 AST Node `DeclareModuleExports` shape:
-- `typeAnnotation`: `0TypeAnnotation` (required)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -983,10 +985,10 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareOpaqueType(node, opts)` and `t.assertDeclareOpaqueType(node, opts)`.
 
 AST Node `DeclareOpaqueType` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `supertype`: `0FlowType` (default: `null`)
-- `impltype`: `0FlowType` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `supertype`: <span className="code">[FlowType](#flowtype)</span> (default: `null`)
+- `impltype`: <span className="code">[FlowType](#flowtype)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -1001,9 +1003,9 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareTypeAlias(node, opts)` and `t.assertDeclareTypeAlias(node, opts)`.
 
 AST Node `DeclareTypeAlias` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `right`: `0FlowType` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `right`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -1018,7 +1020,7 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclareVariable(node, opts)` and `t.assertDeclareVariable(node, opts)`.
 
 AST Node `DeclareVariable` shape:
-- `id`: `0Identifier` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -1033,7 +1035,7 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isDeclaredPredicate(node, opts)` and `t.assertDeclaredPredicate(node, opts)`.
 
 AST Node `DeclaredPredicate` shape:
-- `value`: `0Flow` (required)
+- `value`: <span className="code">[Flow](#flow)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowPredicate`](#flowpredicate)
 
@@ -1048,7 +1050,7 @@ Aliases: [`Flow`](#flow), [`FlowPredicate`](#flowpredicate)
 See also `t.isDecorator(node, opts)` and `t.assertDecorator(node, opts)`.
 
 AST Node `Decorator` shape:
-- `expression`: `0Expression` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 ---
 
@@ -1061,7 +1063,7 @@ AST Node `Decorator` shape:
 See also `t.isDirective(node, opts)` and `t.assertDirective(node, opts)`.
 
 AST Node `Directive` shape:
-- `value`: `0DirectiveLiteral` (required)
+- `value`: <span className="code">[DirectiveLiteral](#directiveliteral)</span> (required)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -1076,7 +1078,7 @@ Aliases: [`Standardized`](#standardized)
 See also `t.isDirectiveLiteral(node, opts)` and `t.assertDirectiveLiteral(node, opts)`.
 
 AST Node `DirectiveLiteral` shape:
-- `value`: `string` (required)
+- `value`: string (required)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -1091,8 +1093,8 @@ Aliases: [`Standardized`](#standardized)
 See also `t.isDoExpression(node, opts)` and `t.assertDoExpression(node, opts)`.
 
 AST Node `DoExpression` shape:
-- `body`: `0BlockStatement` (required)
-- `async`: `boolean` (default: `false`)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
+- `async`: boolean (default: `false`)
 
 Aliases: [`Expression`](#expression)
 
@@ -1107,8 +1109,8 @@ Aliases: [`Expression`](#expression)
 See also `t.isDoWhileStatement(node, opts)` and `t.assertDoWhileStatement(node, opts)`.
 
 AST Node `DoWhileStatement` shape:
-- `test`: `0Expression` (required)
-- `body`: `0Statement` (required)
+- `test`: <span className="code">[Expression](#expression)</span> (required)
+- `body`: <span className="code">[Statement](#statement)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`BlockParent`](#blockparent), [`Loop`](#loop), [`While`](#while), [`Scopable`](#scopable)
 
@@ -1147,9 +1149,9 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype), [`FlowBaseAnnotation`](#flowb
 See also `t.isEnumBooleanBody(node, opts)` and `t.assertEnumBooleanBody(node, opts)`.
 
 AST Node `EnumBooleanBody` shape:
-- `members`: `Array<0EnumBooleanMember>` (required)
-- `explicitType`: `boolean` (required)
-- `hasUnknownMembers`: `boolean` (required)
+- `members`: <span className="code">Array\<<span className="code">[EnumBooleanMember](#enumbooleanmember)</span>\></span> (required)
+- `explicitType`: boolean (required)
+- `hasUnknownMembers`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`EnumBody`](#enumbody)
 
@@ -1164,8 +1166,8 @@ Aliases: [`Flow`](#flow), [`EnumBody`](#enumbody)
 See also `t.isEnumBooleanMember(node, opts)` and `t.assertEnumBooleanMember(node, opts)`.
 
 AST Node `EnumBooleanMember` shape:
-- `id`: `0Identifier` (required)
-- `init`: `0BooleanLiteral` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `init`: <span className="code">[BooleanLiteral](#booleanliteral)</span> (required)
 
 Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 
@@ -1180,8 +1182,8 @@ Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 See also `t.isEnumDeclaration(node, opts)` and `t.assertEnumDeclaration(node, opts)`.
 
 AST Node `EnumDeclaration` shape:
-- `id`: `0Identifier` (required)
-- `body`: `0EnumBooleanBody | 0EnumNumberBody | 0EnumStringBody | 0EnumSymbolBody` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `body`: <span className="code">[EnumBooleanBody](#enumbooleanbody) | [EnumNumberBody](#enumnumberbody) | [EnumStringBody](#enumstringbody) | [EnumSymbolBody](#enumsymbolbody)</span> (required)
 
 Aliases: [`Flow`](#flow), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -1196,7 +1198,7 @@ Aliases: [`Flow`](#flow), [`Statement`](#statement), [`Declaration`](#declaratio
 See also `t.isEnumDefaultedMember(node, opts)` and `t.assertEnumDefaultedMember(node, opts)`.
 
 AST Node `EnumDefaultedMember` shape:
-- `id`: `0Identifier` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 
@@ -1211,9 +1213,9 @@ Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 See also `t.isEnumNumberBody(node, opts)` and `t.assertEnumNumberBody(node, opts)`.
 
 AST Node `EnumNumberBody` shape:
-- `members`: `Array<0EnumNumberMember>` (required)
-- `explicitType`: `boolean` (required)
-- `hasUnknownMembers`: `boolean` (required)
+- `members`: <span className="code">Array\<<span className="code">[EnumNumberMember](#enumnumbermember)</span>\></span> (required)
+- `explicitType`: boolean (required)
+- `hasUnknownMembers`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`EnumBody`](#enumbody)
 
@@ -1228,8 +1230,8 @@ Aliases: [`Flow`](#flow), [`EnumBody`](#enumbody)
 See also `t.isEnumNumberMember(node, opts)` and `t.assertEnumNumberMember(node, opts)`.
 
 AST Node `EnumNumberMember` shape:
-- `id`: `0Identifier` (required)
-- `init`: `0NumericLiteral` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `init`: <span className="code">[NumericLiteral](#numericliteral)</span> (required)
 
 Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 
@@ -1244,9 +1246,9 @@ Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 See also `t.isEnumStringBody(node, opts)` and `t.assertEnumStringBody(node, opts)`.
 
 AST Node `EnumStringBody` shape:
-- `members`: `Array<0EnumStringMember | 0EnumDefaultedMember>` (required)
-- `explicitType`: `boolean` (required)
-- `hasUnknownMembers`: `boolean` (required)
+- `members`: <span className="code">Array\<<span className="code">[EnumStringMember](#enumstringmember) | [EnumDefaultedMember](#enumdefaultedmember)</span>\></span> (required)
+- `explicitType`: boolean (required)
+- `hasUnknownMembers`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`EnumBody`](#enumbody)
 
@@ -1261,8 +1263,8 @@ Aliases: [`Flow`](#flow), [`EnumBody`](#enumbody)
 See also `t.isEnumStringMember(node, opts)` and `t.assertEnumStringMember(node, opts)`.
 
 AST Node `EnumStringMember` shape:
-- `id`: `0Identifier` (required)
-- `init`: `0StringLiteral` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `init`: <span className="code">[StringLiteral](#stringliteral)</span> (required)
 
 Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 
@@ -1277,8 +1279,8 @@ Aliases: [`Flow`](#flow), [`EnumMember`](#enummember)
 See also `t.isEnumSymbolBody(node, opts)` and `t.assertEnumSymbolBody(node, opts)`.
 
 AST Node `EnumSymbolBody` shape:
-- `members`: `Array<0EnumDefaultedMember>` (required)
-- `hasUnknownMembers`: `boolean` (required)
+- `members`: <span className="code">Array\<<span className="code">[EnumDefaultedMember](#enumdefaultedmember)</span>\></span> (required)
+- `hasUnknownMembers`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`EnumBody`](#enumbody)
 
@@ -1305,9 +1307,9 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isExportAllDeclaration(node, opts)` and `t.assertExportAllDeclaration(node, opts)`.
 
 AST Node `ExportAllDeclaration` shape:
-- `source`: `0StringLiteral` (required)
-- `assertions`: `Array<0ImportAttribute>` (default: `null`, excluded from builder function)
-- `attributes`: `Array<0ImportAttribute>` (default: `null`, excluded from builder function)
+- `source`: <span className="code">[StringLiteral](#stringliteral)</span> (required)
+- `assertions`: <span className="code">Array\<<span className="code">[ImportAttribute](#importattribute)</span>\></span> (default: `null`, excluded from builder function)
+- `attributes`: <span className="code">Array\<<span className="code">[ImportAttribute](#importattribute)</span>\></span> (default: `null`, excluded from builder function)
 - `exportKind`: `"type" | "value"` (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declaration`](#declaration), [`ImportOrExportDeclaration`](#importorexportdeclaration), [`ExportDeclaration`](#exportdeclaration)
@@ -1323,7 +1325,7 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declarati
 See also `t.isExportDefaultDeclaration(node, opts)` and `t.assertExportDefaultDeclaration(node, opts)`.
 
 AST Node `ExportDefaultDeclaration` shape:
-- `declaration`: `0TSDeclareFunction | 0FunctionDeclaration | 0ClassDeclaration | 0Expression` (required)
+- `declaration`: <span className="code">[TSDeclareFunction](#tsdeclarefunction) | [FunctionDeclaration](#functiondeclaration) | [ClassDeclaration](#classdeclaration) | [Expression](#expression)</span> (required)
 - `exportKind`: `"value"` (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declaration`](#declaration), [`ImportOrExportDeclaration`](#importorexportdeclaration), [`ExportDeclaration`](#exportdeclaration)
@@ -1339,7 +1341,7 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declarati
 See also `t.isExportDefaultSpecifier(node, opts)` and `t.assertExportDefaultSpecifier(node, opts)`.
 
 AST Node `ExportDefaultSpecifier` shape:
-- `exported`: `0Identifier` (required)
+- `exported`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`ModuleSpecifier`](#modulespecifier)
 
@@ -1354,11 +1356,11 @@ Aliases: [`ModuleSpecifier`](#modulespecifier)
 See also `t.isExportNamedDeclaration(node, opts)` and `t.assertExportNamedDeclaration(node, opts)`.
 
 AST Node `ExportNamedDeclaration` shape:
-- `declaration`: `0Declaration` (default: `null`)
-- `specifiers`: `Array<0ExportSpecifier | 0ExportDefaultSpecifier | 0ExportNamespaceSpecifier>` (default: `[]`)
-- `source`: `0StringLiteral` (default: `null`)
-- `assertions`: `Array<0ImportAttribute>` (default: `null`, excluded from builder function)
-- `attributes`: `Array<0ImportAttribute>` (default: `null`, excluded from builder function)
+- `declaration`: <span className="code">[Declaration](#declaration)</span> (default: `null`)
+- `specifiers`: <span className="code">Array\<<span className="code">[ExportSpecifier](#exportspecifier) | [ExportDefaultSpecifier](#exportdefaultspecifier) | [ExportNamespaceSpecifier](#exportnamespacespecifier)</span>\></span> (default: `[]`)
+- `source`: <span className="code">[StringLiteral](#stringliteral)</span> (default: `null`)
+- `assertions`: <span className="code">Array\<<span className="code">[ImportAttribute](#importattribute)</span>\></span> (default: `null`, excluded from builder function)
+- `attributes`: <span className="code">Array\<<span className="code">[ImportAttribute](#importattribute)</span>\></span> (default: `null`, excluded from builder function)
 - `exportKind`: `"type" | "value"` (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declaration`](#declaration), [`ImportOrExportDeclaration`](#importorexportdeclaration), [`ExportDeclaration`](#exportdeclaration)
@@ -1374,7 +1376,7 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declarati
 See also `t.isExportNamespaceSpecifier(node, opts)` and `t.assertExportNamespaceSpecifier(node, opts)`.
 
 AST Node `ExportNamespaceSpecifier` shape:
-- `exported`: `0Identifier` (required)
+- `exported`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 
@@ -1389,8 +1391,8 @@ Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 See also `t.isExportSpecifier(node, opts)` and `t.assertExportSpecifier(node, opts)`.
 
 AST Node `ExportSpecifier` shape:
-- `local`: `0Identifier` (required)
-- `exported`: `0Identifier | 0StringLiteral` (required)
+- `local`: <span className="code">[Identifier](#identifier)</span> (required)
+- `exported`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral)</span> (required)
 - `exportKind`: `"type" | "value"` (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
@@ -1406,7 +1408,7 @@ Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 See also `t.isExpressionStatement(node, opts)` and `t.assertExpressionStatement(node, opts)`.
 
 AST Node `ExpressionStatement` shape:
-- `expression`: `0Expression` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`ExpressionWrapper`](#expressionwrapper)
 
@@ -1421,9 +1423,9 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Expressio
 See also `t.isFile(node, opts)` and `t.assertFile(node, opts)`.
 
 AST Node `File` shape:
-- `program`: `0Program` (required)
-- `comments`: `Array<0CommentBlock | 0CommentLine>` (default: `null`)
-- `tokens`: `Array<any>` (default: `null`)
+- `program`: <span className="code">[Program](#program)</span> (required)
+- `comments`: <span className="code">Array\<<span className="code">[CommentBlock](#commentblock) | [CommentLine](#commentline)</span>\></span> (default: `null`)
+- `tokens`: <span className="code">Array\<any\></span> (default: `null`)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -1438,9 +1440,9 @@ Aliases: [`Standardized`](#standardized)
 See also `t.isForInStatement(node, opts)` and `t.assertForInStatement(node, opts)`.
 
 AST Node `ForInStatement` shape:
-- `left`: `0VariableDeclaration | 0LVal` (required)
-- `right`: `0Expression` (required)
-- `body`: `0Statement` (required)
+- `left`: <span className="code">[VariableDeclaration](#variabledeclaration) | [LVal](#lval)</span> (required)
+- `right`: <span className="code">[Expression](#expression)</span> (required)
+- `body`: <span className="code">[Statement](#statement)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Statement`](#statement), [`For`](#for), [`BlockParent`](#blockparent), [`Loop`](#loop), [`ForXStatement`](#forxstatement)
 
@@ -1455,10 +1457,10 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Statement`]
 See also `t.isForOfStatement(node, opts)` and `t.assertForOfStatement(node, opts)`.
 
 AST Node `ForOfStatement` shape:
-- `left`: `0VariableDeclaration | 0LVal` (required)
-- `right`: `0Expression` (required)
-- `body`: `0Statement` (required)
-- `await`: `boolean` (default: `false`)
+- `left`: <span className="code">[VariableDeclaration](#variabledeclaration) | [LVal](#lval)</span> (required)
+- `right`: <span className="code">[Expression](#expression)</span> (required)
+- `body`: <span className="code">[Statement](#statement)</span> (required)
+- `await`: boolean (default: `false`)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Statement`](#statement), [`For`](#for), [`BlockParent`](#blockparent), [`Loop`](#loop), [`ForXStatement`](#forxstatement)
 
@@ -1473,10 +1475,10 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Statement`]
 See also `t.isForStatement(node, opts)` and `t.assertForStatement(node, opts)`.
 
 AST Node `ForStatement` shape:
-- `init`: `0VariableDeclaration | 0Expression` (default: `null`)
-- `test`: `0Expression` (default: `null`)
-- `update`: `0Expression` (default: `null`)
-- `body`: `0Statement` (required)
+- `init`: <span className="code">[VariableDeclaration](#variabledeclaration) | [Expression](#expression)</span> (default: `null`)
+- `test`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `update`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `body`: <span className="code">[Statement](#statement)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Statement`](#statement), [`For`](#for), [`BlockParent`](#blockparent), [`Loop`](#loop)
 
@@ -1491,15 +1493,15 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Statement`]
 See also `t.isFunctionDeclaration(node, opts)` and `t.assertFunctionDeclaration(node, opts)`.
 
 AST Node `FunctionDeclaration` shape:
-- `id`: `0Identifier` (default: `null`)
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement>` (required)
-- `body`: `0BlockStatement` (required)
-- `generator`: `boolean` (default: `false`)
-- `async`: `boolean` (default: `false`)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
-- `predicate`: `0DeclaredPredicate | 0InferredPredicate` (default: `null`, excluded from builder function)
-- `returnType`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement)</span>\></span> (required)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
+- `generator`: boolean (default: `false`)
+- `async`: boolean (default: `false`)
+- `declare`: boolean (default: `null`, excluded from builder function)
+- `predicate`: <span className="code">[DeclaredPredicate](#declaredpredicate) | [InferredPredicate](#inferredpredicate)</span> (default: `null`, excluded from builder function)
+- `returnType`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Function`](#function), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent), [`Statement`](#statement), [`Pureish`](#pureish), [`Declaration`](#declaration)
 
@@ -1514,14 +1516,14 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Function`](
 See also `t.isFunctionExpression(node, opts)` and `t.assertFunctionExpression(node, opts)`.
 
 AST Node `FunctionExpression` shape:
-- `id`: `0Identifier` (default: `null`)
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement>` (required)
-- `body`: `0BlockStatement` (required)
-- `generator`: `boolean` (default: `false`)
-- `async`: `boolean` (default: `false`)
-- `predicate`: `0DeclaredPredicate | 0InferredPredicate` (default: `null`, excluded from builder function)
-- `returnType`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement)</span>\></span> (required)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
+- `generator`: boolean (default: `false`)
+- `async`: boolean (default: `false`)
+- `predicate`: <span className="code">[DeclaredPredicate](#declaredpredicate) | [InferredPredicate](#inferredpredicate)</span> (default: `null`, excluded from builder function)
+- `returnType`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Function`](#function), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent), [`Expression`](#expression), [`Pureish`](#pureish)
 
@@ -1536,11 +1538,11 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`Function`](
 See also `t.isFunctionTypeAnnotation(node, opts)` and `t.assertFunctionTypeAnnotation(node, opts)`.
 
 AST Node `FunctionTypeAnnotation` shape:
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `params`: `Array<0FunctionTypeParam>` (required)
-- `rest`: `0FunctionTypeParam` (default: `null`)
-- `returnType`: `0FlowType` (required)
-- `this`: `0FunctionTypeParam` (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `params`: <span className="code">Array\<<span className="code">[FunctionTypeParam](#functiontypeparam)</span>\></span> (required)
+- `rest`: <span className="code">[FunctionTypeParam](#functiontypeparam)</span> (default: `null`)
+- `returnType`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `this`: <span className="code">[FunctionTypeParam](#functiontypeparam)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -1555,9 +1557,9 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isFunctionTypeParam(node, opts)` and `t.assertFunctionTypeParam(node, opts)`.
 
 AST Node `FunctionTypeParam` shape:
-- `name`: `0Identifier` (default: `null`)
-- `typeAnnotation`: `0FlowType` (required)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
+- `name`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
+- `typeAnnotation`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `optional`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow)
 
@@ -1572,8 +1574,8 @@ Aliases: [`Flow`](#flow)
 See also `t.isGenericTypeAnnotation(node, opts)` and `t.assertGenericTypeAnnotation(node, opts)`.
 
 AST Node `GenericTypeAnnotation` shape:
-- `id`: `0Identifier | 0QualifiedTypeIdentifier` (required)
-- `typeParameters`: `0TypeParameterInstantiation` (default: `null`)
+- `id`: <span className="code">[Identifier](#identifier) | [QualifiedTypeIdentifier](#qualifiedtypeidentifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -1589,9 +1591,9 @@ See also `t.isIdentifier(node, opts)` and `t.assertIdentifier(node, opts)`.
 
 AST Node `Identifier` shape:
 - `name`: `string` (required)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`PatternLike`](#patternlike), [`LVal`](#lval), [`TSEntityName`](#tsentityname)
 
@@ -1606,9 +1608,9 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pattern
 See also `t.isIfStatement(node, opts)` and `t.assertIfStatement(node, opts)`.
 
 AST Node `IfStatement` shape:
-- `test`: `0Expression` (required)
-- `consequent`: `0Statement` (required)
-- `alternate`: `0Statement` (default: `null`)
+- `test`: <span className="code">[Expression](#expression)</span> (required)
+- `consequent`: <span className="code">[Statement](#statement)</span> (required)
+- `alternate`: <span className="code">[Statement](#statement)</span> (default: `null`)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Conditional`](#conditional)
 
@@ -1635,8 +1637,8 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isImportAttribute(node, opts)` and `t.assertImportAttribute(node, opts)`.
 
 AST Node `ImportAttribute` shape:
-- `key`: `0Identifier | 0StringLiteral` (required)
-- `value`: `0StringLiteral` (required)
+- `key`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral)</span> (required)
+- `value`: <span className="code">[StringLiteral](#stringliteral)</span> (required)
 
 ---
 
@@ -1657,12 +1659,12 @@ AST Node `ImportAttribute` shape:
 See also `t.isImportDeclaration(node, opts)` and `t.assertImportDeclaration(node, opts)`.
 
 AST Node `ImportDeclaration` shape:
-- `specifiers`: `Array<0ImportSpecifier | 0ImportDefaultSpecifier | 0ImportNamespaceSpecifier>` (required)
-- `source`: `0StringLiteral` (required)
-- `assertions`: `Array<0ImportAttribute>` (default: `null`, excluded from builder function)
-- `attributes`: `Array<0ImportAttribute>` (default: `null`, excluded from builder function)
+- `specifiers`: <span className="code">Array\<<span className="code">[ImportSpecifier](#importspecifier) | [ImportDefaultSpecifier](#importdefaultspecifier) | [ImportNamespaceSpecifier](#importnamespacespecifier)</span>\></span> (required)
+- `source`: <span className="code">[StringLiteral](#stringliteral)</span> (required)
+- `assertions`: <span className="code">Array\<<span className="code">[ImportAttribute](#importattribute)</span>\></span> (default: `null`, excluded from builder function)
+- `attributes`: <span className="code">Array\<<span className="code">[ImportAttribute](#importattribute)</span>\></span> (default: `null`, excluded from builder function)
 - `importKind`: `"type" | "typeof" | "value"` (default: `null`, excluded from builder function)
-- `module`: `boolean` (default: `null`, excluded from builder function)
+- `module`: boolean (default: `null`, excluded from builder function)
 - `phase`: `"source" | "defer"` (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declaration`](#declaration), [`ImportOrExportDeclaration`](#importorexportdeclaration)
@@ -1678,7 +1680,7 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declarati
 See also `t.isImportDefaultSpecifier(node, opts)` and `t.assertImportDefaultSpecifier(node, opts)`.
 
 AST Node `ImportDefaultSpecifier` shape:
-- `local`: `0Identifier` (required)
+- `local`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 
@@ -1693,8 +1695,8 @@ Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 See also `t.isImportExpression(node, opts)` and `t.assertImportExpression(node, opts)`.
 
 AST Node `ImportExpression` shape:
-- `source`: `0Expression` (required)
-- `options`: `0Expression` (default: `null`)
+- `source`: <span className="code">[Expression](#expression)</span> (required)
+- `options`: <span className="code">[Expression](#expression)</span> (default: `null`)
 - `phase`: `"source" | "defer"` (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
@@ -1710,7 +1712,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isImportNamespaceSpecifier(node, opts)` and `t.assertImportNamespaceSpecifier(node, opts)`.
 
 AST Node `ImportNamespaceSpecifier` shape:
-- `local`: `0Identifier` (required)
+- `local`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 
@@ -1725,8 +1727,8 @@ Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 See also `t.isImportSpecifier(node, opts)` and `t.assertImportSpecifier(node, opts)`.
 
 AST Node `ImportSpecifier` shape:
-- `local`: `0Identifier` (required)
-- `imported`: `0Identifier | 0StringLiteral` (required)
+- `local`: <span className="code">[Identifier](#identifier)</span> (required)
+- `imported`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral)</span> (required)
 - `importKind`: `"type" | "typeof" | "value"` (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
@@ -1742,8 +1744,8 @@ Aliases: [`Standardized`](#standardized), [`ModuleSpecifier`](#modulespecifier)
 See also `t.isIndexedAccessType(node, opts)` and `t.assertIndexedAccessType(node, opts)`.
 
 AST Node `IndexedAccessType` shape:
-- `objectType`: `0FlowType` (required)
-- `indexType`: `0FlowType` (required)
+- `objectType`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `indexType`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -1770,10 +1772,10 @@ Aliases: [`Flow`](#flow), [`FlowPredicate`](#flowpredicate)
 See also `t.isInterfaceDeclaration(node, opts)` and `t.assertInterfaceDeclaration(node, opts)`.
 
 AST Node `InterfaceDeclaration` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `extends`: `Array<0InterfaceExtends>` (default: `null`)
-- `body`: `0ObjectTypeAnnotation` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `extends`: <span className="code">Array\<<span className="code">[InterfaceExtends](#interfaceextends)</span>\></span> (default: `null`)
+- `body`: <span className="code">[ObjectTypeAnnotation](#objecttypeannotation)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -1788,8 +1790,8 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isInterfaceExtends(node, opts)` and `t.assertInterfaceExtends(node, opts)`.
 
 AST Node `InterfaceExtends` shape:
-- `id`: `0Identifier | 0QualifiedTypeIdentifier` (required)
-- `typeParameters`: `0TypeParameterInstantiation` (default: `null`)
+- `id`: <span className="code">[Identifier](#identifier) | [QualifiedTypeIdentifier](#qualifiedtypeidentifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`Flow`](#flow)
 
@@ -1804,8 +1806,8 @@ Aliases: [`Flow`](#flow)
 See also `t.isInterfaceTypeAnnotation(node, opts)` and `t.assertInterfaceTypeAnnotation(node, opts)`.
 
 AST Node `InterfaceTypeAnnotation` shape:
-- `extends`: `Array<0InterfaceExtends>` (default: `null`)
-- `body`: `0ObjectTypeAnnotation` (required)
+- `extends`: <span className="code">Array\<<span className="code">[InterfaceExtends](#interfaceextends)</span>\></span> (default: `null`)
+- `body`: <span className="code">[ObjectTypeAnnotation](#objecttypeannotation)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -1820,7 +1822,7 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isInterpreterDirective(node, opts)` and `t.assertInterpreterDirective(node, opts)`.
 
 AST Node `InterpreterDirective` shape:
-- `value`: `string` (required)
+- `value`: string (required)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -1835,7 +1837,7 @@ Aliases: [`Standardized`](#standardized)
 See also `t.isIntersectionTypeAnnotation(node, opts)` and `t.assertIntersectionTypeAnnotation(node, opts)`.
 
 AST Node `IntersectionTypeAnnotation` shape:
-- `types`: `Array<0FlowType>` (required)
+- `types`: <span className="code">Array\<<span className="code">[FlowType](#flowtype)</span>\></span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -1850,8 +1852,8 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isJSXAttribute(node, opts)` and `t.assertJSXAttribute(node, opts)`.
 
 AST Node `JSXAttribute` shape:
-- `name`: `0JSXIdentifier | 0JSXNamespacedName` (required)
-- `value`: `0JSXElement | 0JSXFragment | 0StringLiteral | 0JSXExpressionContainer` (default: `null`)
+- `name`: <span className="code">[JSXIdentifier](#jsxidentifier) | [JSXNamespacedName](#jsxnamespacedname)</span> (required)
+- `value`: <span className="code">[JSXElement](#jsxelement) | [JSXFragment](#jsxfragment) | [StringLiteral](#stringliteral) | [JSXExpressionContainer](#jsxexpressioncontainer)</span> (default: `null`)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 
@@ -1866,7 +1868,7 @@ Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 See also `t.isJSXClosingElement(node, opts)` and `t.assertJSXClosingElement(node, opts)`.
 
 AST Node `JSXClosingElement` shape:
-- `name`: `0JSXIdentifier | 0JSXMemberExpression | 0JSXNamespacedName` (required)
+- `name`: <span className="code">[JSXIdentifier](#jsxidentifier) | [JSXMemberExpression](#jsxmemberexpression) | [JSXNamespacedName](#jsxnamespacedname)</span> (required)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 
@@ -1893,10 +1895,10 @@ Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 See also `t.isJSXElement(node, opts)` and `t.assertJSXElement(node, opts)`.
 
 AST Node `JSXElement` shape:
-- `openingElement`: `0JSXOpeningElement` (required)
-- `closingElement`: `0JSXClosingElement` (default: `null`)
-- `children`: `Array<0JSXText | 0JSXExpressionContainer | 0JSXSpreadChild | 0JSXElement | 0JSXFragment>` (required)
-- `selfClosing`: `boolean` (default: `null`)
+- `openingElement`: <span className="code">[JSXOpeningElement](#jsxopeningelement)</span> (required)
+- `closingElement`: <span className="code">[JSXClosingElement](#jsxclosingelement)</span> (default: `null`)
+- `children`: <span className="code">Array\<<span className="code">[JSXText](#jsxtext) | [JSXExpressionContainer](#jsxexpressioncontainer) | [JSXSpreadChild](#jsxspreadchild) | [JSXElement](#jsxelement) | [JSXFragment](#jsxfragment)</span>\></span> (required)
+- `selfClosing`: boolean (default: `null`)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable), [`Expression`](#expression)
 
@@ -1923,7 +1925,7 @@ Aliases: [`JSX`](#jsx)
 See also `t.isJSXExpressionContainer(node, opts)` and `t.assertJSXExpressionContainer(node, opts)`.
 
 AST Node `JSXExpressionContainer` shape:
-- `expression`: `0Expression | 0JSXEmptyExpression` (required)
+- `expression`: <span className="code">[Expression](#expression) | [JSXEmptyExpression](#jsxemptyexpression)</span> (required)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 
@@ -1938,9 +1940,9 @@ Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 See also `t.isJSXFragment(node, opts)` and `t.assertJSXFragment(node, opts)`.
 
 AST Node `JSXFragment` shape:
-- `openingFragment`: `0JSXOpeningFragment` (required)
-- `closingFragment`: `0JSXClosingFragment` (required)
-- `children`: `Array<0JSXText | 0JSXExpressionContainer | 0JSXSpreadChild | 0JSXElement | 0JSXFragment>` (required)
+- `openingFragment`: <span className="code">[JSXOpeningFragment](#jsxopeningfragment)</span> (required)
+- `closingFragment`: <span className="code">[JSXClosingFragment](#jsxclosingfragment)</span> (required)
+- `children`: <span className="code">Array\<<span className="code">[JSXText](#jsxtext) | [JSXExpressionContainer](#jsxexpressioncontainer) | [JSXSpreadChild](#jsxspreadchild) | [JSXElement](#jsxelement) | [JSXFragment](#jsxfragment)</span>\></span> (required)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable), [`Expression`](#expression)
 
@@ -1955,7 +1957,7 @@ Aliases: [`JSX`](#jsx), [`Immutable`](#immutable), [`Expression`](#expression)
 See also `t.isJSXIdentifier(node, opts)` and `t.assertJSXIdentifier(node, opts)`.
 
 AST Node `JSXIdentifier` shape:
-- `name`: `string` (required)
+- `name`: string (required)
 
 Aliases: [`JSX`](#jsx)
 
@@ -1970,8 +1972,8 @@ Aliases: [`JSX`](#jsx)
 See also `t.isJSXMemberExpression(node, opts)` and `t.assertJSXMemberExpression(node, opts)`.
 
 AST Node `JSXMemberExpression` shape:
-- `object`: `0JSXMemberExpression | 0JSXIdentifier` (required)
-- `property`: `0JSXIdentifier` (required)
+- `object`: <span className="code">[JSXMemberExpression](#jsxmemberexpression) | [JSXIdentifier](#jsxidentifier)</span> (required)
+- `property`: <span className="code">[JSXIdentifier](#jsxidentifier)</span> (required)
 
 Aliases: [`JSX`](#jsx)
 
@@ -1986,8 +1988,8 @@ Aliases: [`JSX`](#jsx)
 See also `t.isJSXNamespacedName(node, opts)` and `t.assertJSXNamespacedName(node, opts)`.
 
 AST Node `JSXNamespacedName` shape:
-- `namespace`: `0JSXIdentifier` (required)
-- `name`: `0JSXIdentifier` (required)
+- `namespace`: <span className="code">[JSXIdentifier](#jsxidentifier)</span> (required)
+- `name`: <span className="code">[JSXIdentifier](#jsxidentifier)</span> (required)
 
 Aliases: [`JSX`](#jsx)
 
@@ -2002,10 +2004,10 @@ Aliases: [`JSX`](#jsx)
 See also `t.isJSXOpeningElement(node, opts)` and `t.assertJSXOpeningElement(node, opts)`.
 
 AST Node `JSXOpeningElement` shape:
-- `name`: `0JSXIdentifier | 0JSXMemberExpression | 0JSXNamespacedName` (required)
-- `attributes`: `Array<0JSXAttribute | 0JSXSpreadAttribute>` (required)
-- `selfClosing`: `boolean` (default: `false`)
-- `typeParameters`: `0TypeParameterInstantiation | 0TSTypeParameterInstantiation` (default: `null`, excluded from builder function)
+- `name`: <span className="code">[JSXIdentifier](#jsxidentifier) | [JSXMemberExpression](#jsxmemberexpression) | [JSXNamespacedName](#jsxnamespacedname)</span> (required)
+- `attributes`: <span className="code">Array\<<span className="code">[JSXAttribute](#jsxattribute) | [JSXSpreadAttribute](#jsxspreadattribute)</span>\></span> (required)
+- `selfClosing`: boolean (default: `false`)
+- `typeParameters`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation) | [TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 
@@ -2032,7 +2034,7 @@ Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 See also `t.isJSXSpreadAttribute(node, opts)` and `t.assertJSXSpreadAttribute(node, opts)`.
 
 AST Node `JSXSpreadAttribute` shape:
-- `argument`: `0Expression` (required)
+- `argument`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`JSX`](#jsx)
 
@@ -2047,7 +2049,7 @@ Aliases: [`JSX`](#jsx)
 See also `t.isJSXSpreadChild(node, opts)` and `t.assertJSXSpreadChild(node, opts)`.
 
 AST Node `JSXSpreadChild` shape:
-- `expression`: `0Expression` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 
@@ -2062,7 +2064,7 @@ Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 See also `t.isJSXText(node, opts)` and `t.assertJSXText(node, opts)`.
 
 AST Node `JSXText` shape:
-- `value`: `string` (required)
+- `value`: string (required)
 
 Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 
@@ -2077,8 +2079,8 @@ Aliases: [`JSX`](#jsx), [`Immutable`](#immutable)
 See also `t.isLabeledStatement(node, opts)` and `t.assertLabeledStatement(node, opts)`.
 
 AST Node `LabeledStatement` shape:
-- `label`: `0Identifier` (required)
-- `body`: `0Statement` (required)
+- `label`: <span className="code">[Identifier](#identifier)</span> (required)
+- `body`: <span className="code">[Statement](#statement)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement)
 
@@ -2094,8 +2096,8 @@ See also `t.isLogicalExpression(node, opts)` and `t.assertLogicalExpression(node
 
 AST Node `LogicalExpression` shape:
 - `operator`: `"||" | "&&" | "??"` (required)
-- `left`: `0Expression` (required)
-- `right`: `0Expression` (required)
+- `left`: <span className="code">[Expression](#expression)</span> (required)
+- `right`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Binary`](#binary), [`Expression`](#expression)
 
@@ -2110,9 +2112,9 @@ Aliases: [`Standardized`](#standardized), [`Binary`](#binary), [`Expression`](#e
 See also `t.isMemberExpression(node, opts)` and `t.assertMemberExpression(node, opts)`.
 
 AST Node `MemberExpression` shape:
-- `object`: `0Expression | 0Super` (required)
+- `object`: <span className="code">[Expression](#expression) | [Super](#super)</span> (required)
 - `property`: if computed then `Expression` else `Identifier` (required)
-- `computed`: `boolean` (default: `false`)
+- `computed`: boolean (default: `false`)
 - `optional`: `true | false` (default: `null`)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`LVal`](#lval)
@@ -2128,8 +2130,8 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`LVal`](
 See also `t.isMetaProperty(node, opts)` and `t.assertMetaProperty(node, opts)`.
 
 AST Node `MetaProperty` shape:
-- `meta`: `0Identifier` (required)
-- `property`: `0Identifier` (required)
+- `meta`: <span className="code">[Identifier](#identifier)</span> (required)
+- `property`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -2156,7 +2158,7 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype), [`FlowBaseAnnotation`](#flowb
 See also `t.isModuleExpression(node, opts)` and `t.assertModuleExpression(node, opts)`.
 
 AST Node `ModuleExpression` shape:
-- `body`: `0Program` (required)
+- `body`: <span className="code">[Program](#program)</span> (required)
 
 Aliases: [`Expression`](#expression)
 
@@ -2171,11 +2173,11 @@ Aliases: [`Expression`](#expression)
 See also `t.isNewExpression(node, opts)` and `t.assertNewExpression(node, opts)`.
 
 AST Node `NewExpression` shape:
-- `callee`: `0Expression | 0Super | 0V8IntrinsicIdentifier` (required)
-- `arguments`: `Array<0Expression | 0SpreadElement | 0JSXNamespacedName | 0ArgumentPlaceholder>` (required)
+- `callee`: <span className="code">[Expression](#expression) | [Super](#super) | [V8IntrinsicIdentifier](#v8intrinsicidentifier)</span> (required)
+- `arguments`: <span className="code">Array\<<span className="code">[Expression](#expression) | [SpreadElement](#spreadelement) | [JSXNamespacedName](#jsxnamespacedname) | [ArgumentPlaceholder](#argumentplaceholder)</span>\></span> (required)
 - `optional`: `true | false` (default: `null`, excluded from builder function)
-- `typeArguments`: `0TypeParameterInstantiation` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`, excluded from builder function)
+- `typeArguments`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -2226,7 +2228,7 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype), [`FlowBaseAnnotation`](#flowb
 See also `t.isNullableTypeAnnotation(node, opts)` and `t.assertNullableTypeAnnotation(node, opts)`.
 
 AST Node `NullableTypeAnnotation` shape:
-- `typeAnnotation`: `0FlowType` (required)
+- `typeAnnotation`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -2241,7 +2243,7 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isNumberLiteralTypeAnnotation(node, opts)` and `t.assertNumberLiteralTypeAnnotation(node, opts)`.
 
 AST Node `NumberLiteralTypeAnnotation` shape:
-- `value`: `number` (required)
+- `value`: number (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -2283,7 +2285,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish
 See also `t.isObjectExpression(node, opts)` and `t.assertObjectExpression(node, opts)`.
 
 AST Node `ObjectExpression` shape:
-- `properties`: `Array<0ObjectMethod | 0ObjectProperty | 0SpreadElement>` (required)
+- `properties`: <span className="code">Array\<<span className="code">[ObjectMethod](#objectmethod) | [ObjectProperty](#objectproperty) | [SpreadElement](#spreadelement)</span>\></span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -2300,14 +2302,14 @@ See also `t.isObjectMethod(node, opts)` and `t.assertObjectMethod(node, opts)`.
 AST Node `ObjectMethod` shape:
 - `kind`: `"method" | "get" | "set"` (default: `'method'`)
 - `key`: if computed then `Expression` else `Identifier | Literal` (required)
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement>` (required)
-- `body`: `0BlockStatement` (required)
-- `computed`: `boolean` (default: `false`)
-- `generator`: `boolean` (default: `false`)
-- `async`: `boolean` (default: `false`)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `returnType`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TypeParameterDeclaration | 0TSTypeParameterDeclaration | 0Noop` (default: `null`, excluded from builder function)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement)</span>\></span> (required)
+- `body`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
+- `computed`: boolean (default: `false`)
+- `generator`: boolean (default: `false`)
+- `async`: boolean (default: `false`)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `returnType`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration) | [TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`UserWhitespacable`](#userwhitespacable), [`Function`](#function), [`Scopable`](#scopable), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent), [`Method`](#method), [`ObjectMember`](#objectmember)
 
@@ -2322,10 +2324,10 @@ Aliases: [`Standardized`](#standardized), [`UserWhitespacable`](#userwhitespacab
 See also `t.isObjectPattern(node, opts)` and `t.assertObjectPattern(node, opts)`.
 
 AST Node `ObjectPattern` shape:
-- `properties`: `Array<0RestElement | 0ObjectProperty>` (required)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
+- `properties`: <span className="code">Array\<<span className="code">[RestElement](#restelement) | [ObjectProperty](#objectproperty)</span>\></span> (required)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Pattern`](#pattern), [`PatternLike`](#patternlike), [`LVal`](#lval)
 
@@ -2341,10 +2343,10 @@ See also `t.isObjectProperty(node, opts)` and `t.assertObjectProperty(node, opts
 
 AST Node `ObjectProperty` shape:
 - `key`: if computed then `Expression` else `Identifier | Literal` (required)
-- `value`: `0Expression | 0PatternLike` (required)
-- `computed`: `boolean` (default: `false`)
-- `shorthand`: `boolean` (default: `false`)
-- `decorators`: `Array<0Decorator>` (default: `null`)
+- `value`: <span className="code">[Expression](#expression) | [PatternLike](#patternlike)</span> (required)
+- `computed`: boolean (default: `false`)
+- `shorthand`: boolean (default: `false`)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`)
 
 Aliases: [`Standardized`](#standardized), [`UserWhitespacable`](#userwhitespacable), [`Property`](#property), [`ObjectMember`](#objectmember)
 
@@ -2359,12 +2361,12 @@ Aliases: [`Standardized`](#standardized), [`UserWhitespacable`](#userwhitespacab
 See also `t.isObjectTypeAnnotation(node, opts)` and `t.assertObjectTypeAnnotation(node, opts)`.
 
 AST Node `ObjectTypeAnnotation` shape:
-- `properties`: `Array<0ObjectTypeProperty | 0ObjectTypeSpreadProperty>` (required)
-- `indexers`: `Array<0ObjectTypeIndexer>` (default: `[]`)
-- `callProperties`: `Array<0ObjectTypeCallProperty>` (default: `[]`)
-- `internalSlots`: `Array<0ObjectTypeInternalSlot>` (default: `[]`)
-- `exact`: `boolean` (default: `false`)
-- `inexact`: `boolean` (default: `null`, excluded from builder function)
+- `properties`: <span className="code">Array\<<span className="code">[ObjectTypeProperty](#objecttypeproperty) | [ObjectTypeSpreadProperty](#objecttypespreadproperty)</span>\></span> (required)
+- `indexers`: <span className="code">Array\<<span className="code">[ObjectTypeIndexer](#objecttypeindexer)</span>\></span> (default: `[]`)
+- `callProperties`: <span className="code">Array\<<span className="code">[ObjectTypeCallProperty](#objecttypecallproperty)</span>\></span> (default: `[]`)
+- `internalSlots`: <span className="code">Array\<<span className="code">[ObjectTypeInternalSlot](#objecttypeinternalslot)</span>\></span> (default: `[]`)
+- `exact`: boolean (default: `false`)
+- `inexact`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -2379,8 +2381,8 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isObjectTypeCallProperty(node, opts)` and `t.assertObjectTypeCallProperty(node, opts)`.
 
 AST Node `ObjectTypeCallProperty` shape:
-- `value`: `0FlowType` (required)
-- `static`: `boolean` (required)
+- `value`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `static`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 
@@ -2395,11 +2397,11 @@ Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 See also `t.isObjectTypeIndexer(node, opts)` and `t.assertObjectTypeIndexer(node, opts)`.
 
 AST Node `ObjectTypeIndexer` shape:
-- `id`: `0Identifier` (default: `null`)
-- `key`: `0FlowType` (required)
-- `value`: `0FlowType` (required)
-- `variance`: `0Variance` (default: `null`)
-- `static`: `boolean` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
+- `key`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `value`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `variance`: <span className="code">[Variance](#variance)</span> (default: `null`)
+- `static`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 
@@ -2414,11 +2416,11 @@ Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 See also `t.isObjectTypeInternalSlot(node, opts)` and `t.assertObjectTypeInternalSlot(node, opts)`.
 
 AST Node `ObjectTypeInternalSlot` shape:
-- `id`: `0Identifier` (required)
-- `value`: `0FlowType` (required)
-- `optional`: `boolean` (required)
-- `static`: `boolean` (required)
-- `method`: `boolean` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `value`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `optional`: boolean (required)
+- `static`: boolean (required)
+- `method`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 
@@ -2433,14 +2435,14 @@ Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 See also `t.isObjectTypeProperty(node, opts)` and `t.assertObjectTypeProperty(node, opts)`.
 
 AST Node `ObjectTypeProperty` shape:
-- `key`: `0Identifier | 0StringLiteral` (required)
-- `value`: `0FlowType` (required)
-- `variance`: `0Variance` (default: `null`)
+- `key`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral)</span> (required)
+- `value`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `variance`: <span className="code">[Variance](#variance)</span> (default: `null`)
 - `kind`: `"init" | "get" | "set"` (required)
-- `method`: `boolean` (required)
-- `optional`: `boolean` (required)
-- `proto`: `boolean` (required)
-- `static`: `boolean` (required)
+- `method`: boolean (required)
+- `optional`: boolean (required)
+- `proto`: boolean (required)
+- `static`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 
@@ -2455,7 +2457,7 @@ Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 See also `t.isObjectTypeSpreadProperty(node, opts)` and `t.assertObjectTypeSpreadProperty(node, opts)`.
 
 AST Node `ObjectTypeSpreadProperty` shape:
-- `argument`: `0FlowType` (required)
+- `argument`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 
@@ -2470,10 +2472,10 @@ Aliases: [`Flow`](#flow), [`UserWhitespacable`](#userwhitespacable)
 See also `t.isOpaqueType(node, opts)` and `t.assertOpaqueType(node, opts)`.
 
 AST Node `OpaqueType` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `supertype`: `0FlowType` (default: `null`)
-- `impltype`: `0FlowType` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `supertype`: <span className="code">[FlowType](#flowtype)</span> (default: `null`)
+- `impltype`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -2488,11 +2490,11 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isOptionalCallExpression(node, opts)` and `t.assertOptionalCallExpression(node, opts)`.
 
 AST Node `OptionalCallExpression` shape:
-- `callee`: `0Expression` (required)
-- `arguments`: `Array<0Expression | 0SpreadElement | 0JSXNamespacedName | 0ArgumentPlaceholder>` (required)
-- `optional`: `boolean` (required)
-- `typeArguments`: `0TypeParameterInstantiation` (default: `null`, excluded from builder function)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`, excluded from builder function)
+- `callee`: <span className="code">[Expression](#expression)</span> (required)
+- `arguments`: <span className="code">Array\<<span className="code">[Expression](#expression) | [SpreadElement](#spreadelement) | [JSXNamespacedName](#jsxnamespacedname) | [ArgumentPlaceholder](#argumentplaceholder)</span>\></span> (required)
+- `optional`: boolean (required)
+- `typeArguments`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation)</span> (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -2507,9 +2509,9 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isOptionalIndexedAccessType(node, opts)` and `t.assertOptionalIndexedAccessType(node, opts)`.
 
 AST Node `OptionalIndexedAccessType` shape:
-- `objectType`: `0FlowType` (required)
-- `indexType`: `0FlowType` (required)
-- `optional`: `boolean` (required)
+- `objectType`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `indexType`: <span className="code">[FlowType](#flowtype)</span> (required)
+- `optional`: boolean (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -2524,10 +2526,10 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isOptionalMemberExpression(node, opts)` and `t.assertOptionalMemberExpression(node, opts)`.
 
 AST Node `OptionalMemberExpression` shape:
-- `object`: `0Expression` (required)
-- `property`: `0Expression | 0Identifier` (required)
-- `computed`: `boolean` (default: `false`)
-- `optional`: `boolean` (required)
+- `object`: <span className="code">[Expression](#expression)</span> (required)
+- `property`: <span className="code">[Expression](#expression) | [Identifier](#identifier)</span> (required)
+- `computed`: boolean (default: `false`)
+- `optional`: boolean (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -2542,7 +2544,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isParenthesizedExpression(node, opts)` and `t.assertParenthesizedExpression(node, opts)`.
 
 AST Node `ParenthesizedExpression` shape:
-- `expression`: `0Expression` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`ExpressionWrapper`](#expressionwrapper)
 
@@ -2557,7 +2559,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Express
 See also `t.isPipelineBareFunction(node, opts)` and `t.assertPipelineBareFunction(node, opts)`.
 
 AST Node `PipelineBareFunction` shape:
-- `callee`: `0Expression` (required)
+- `callee`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Expression`](#expression)
 
@@ -2584,7 +2586,7 @@ Aliases: [`Expression`](#expression)
 See also `t.isPipelineTopicExpression(node, opts)` and `t.assertPipelineTopicExpression(node, opts)`.
 
 AST Node `PipelineTopicExpression` shape:
-- `expression`: `0Expression` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Expression`](#expression)
 
@@ -2600,7 +2602,7 @@ See also `t.isPlaceholder(node, opts)` and `t.assertPlaceholder(node, opts)`.
 
 AST Node `Placeholder` shape:
 - `expectedNode`: `"Identifier" | "StringLiteral" | "Expression" | "Statement" | "Declaration" | "BlockStatement" | "ClassBody" | "Pattern"` (required)
-- `name`: `0Identifier` (required)
+- `name`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Miscellaneous`](#miscellaneous)
 
@@ -2615,7 +2617,7 @@ Aliases: [`Miscellaneous`](#miscellaneous)
 See also `t.isPrivateName(node, opts)` and `t.assertPrivateName(node, opts)`.
 
 AST Node `PrivateName` shape:
-- `id`: `0Identifier` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Private`](#private)
 
@@ -2630,11 +2632,11 @@ Aliases: [`Standardized`](#standardized), [`Private`](#private)
 See also `t.isProgram(node, opts)` and `t.assertProgram(node, opts)`.
 
 AST Node `Program` shape:
-- `body`: `Array<0Statement>` (required)
-- `directives`: `Array<0Directive>` (default: `[]`)
+- `body`: <span className="code">Array\<<span className="code">[Statement](#statement)</span>\></span> (required)
+- `directives`: <span className="code">Array\<<span className="code">[Directive](#directive)</span>\></span> (default: `[]`)
 - `sourceType`: `"script" | "module"` (default: `'script'`)
-- `interpreter`: `0InterpreterDirective` (default: `null`)
-- `sourceFile`: `string` (required)
+- `interpreter`: <span className="code">[InterpreterDirective](#interpreterdirective)</span> (default: `null`)
+- `sourceFile`: string (required)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent`](#blockparent), [`Block`](#block)
 
@@ -2649,8 +2651,8 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent
 See also `t.isQualifiedTypeIdentifier(node, opts)` and `t.assertQualifiedTypeIdentifier(node, opts)`.
 
 AST Node `QualifiedTypeIdentifier` shape:
-- `id`: `0Identifier` (required)
-- `qualification`: `0Identifier | 0QualifiedTypeIdentifier` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `qualification`: <span className="code">[Identifier](#identifier) | [QualifiedTypeIdentifier](#qualifiedtypeidentifier)</span> (required)
 
 Aliases: [`Flow`](#flow)
 
@@ -2665,7 +2667,7 @@ Aliases: [`Flow`](#flow)
 See also `t.isRecordExpression(node, opts)` and `t.assertRecordExpression(node, opts)`.
 
 AST Node `RecordExpression` shape:
-- `properties`: `Array<0ObjectProperty | 0SpreadElement>` (required)
+- `properties`: <span className="code">Array\<<span className="code">[ObjectProperty](#objectproperty) | [SpreadElement](#spreadelement)</span>\></span> (required)
 
 Aliases: [`Expression`](#expression)
 
@@ -2680,8 +2682,8 @@ Aliases: [`Expression`](#expression)
 See also `t.isRegExpLiteral(node, opts)` and `t.assertRegExpLiteral(node, opts)`.
 
 AST Node `RegExpLiteral` shape:
-- `pattern`: `string` (required)
-- `flags`: `string` (default: `''`)
+- `pattern`: string (required)
+- `flags`: string (default: `''`)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish`](#pureish), [`Literal`](#literal)
 
@@ -2696,10 +2698,10 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish
 See also `t.isRestElement(node, opts)` and `t.assertRestElement(node, opts)`.
 
 AST Node `RestElement` shape:
-- `argument`: `0LVal` (required)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `typeAnnotation`: `0TypeAnnotation | 0TSTypeAnnotation | 0Noop` (default: `null`, excluded from builder function)
+- `argument`: <span className="code">[LVal](#lval)</span> (required)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation) | [TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`LVal`](#lval), [`PatternLike`](#patternlike)
 
@@ -2714,7 +2716,7 @@ Aliases: [`Standardized`](#standardized), [`LVal`](#lval), [`PatternLike`](#patt
 See also `t.isReturnStatement(node, opts)` and `t.assertReturnStatement(node, opts)`.
 
 AST Node `ReturnStatement` shape:
-- `argument`: `0Expression` (default: `null`)
+- `argument`: <span className="code">[Expression](#expression)</span> (default: `null`)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Terminatorless`](#terminatorless), [`CompletionStatement`](#completionstatement)
 
@@ -2729,7 +2731,7 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Terminato
 See also `t.isSequenceExpression(node, opts)` and `t.assertSequenceExpression(node, opts)`.
 
 AST Node `SequenceExpression` shape:
-- `expressions`: `Array<0Expression>` (required)
+- `expressions`: <span className="code">Array\<<span className="code">[Expression](#expression)</span>\></span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -2744,7 +2746,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isSpreadElement(node, opts)` and `t.assertSpreadElement(node, opts)`.
 
 AST Node `SpreadElement` shape:
-- `argument`: `0Expression` (required)
+- `argument`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`UnaryLike`](#unarylike)
 
@@ -2759,7 +2761,7 @@ Aliases: [`Standardized`](#standardized), [`UnaryLike`](#unarylike)
 See also `t.isStaticBlock(node, opts)` and `t.assertStaticBlock(node, opts)`.
 
 AST Node `StaticBlock` shape:
-- `body`: `Array<0Statement>` (required)
+- `body`: <span className="code">Array\<<span className="code">[Statement](#statement)</span>\></span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent)
 
@@ -2774,7 +2776,7 @@ Aliases: [`Standardized`](#standardized), [`Scopable`](#scopable), [`BlockParent
 See also `t.isStringLiteral(node, opts)` and `t.assertStringLiteral(node, opts)`.
 
 AST Node `StringLiteral` shape:
-- `value`: `string` (required)
+- `value`: string (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish`](#pureish), [`Literal`](#literal), [`Immutable`](#immutable)
 
@@ -2789,7 +2791,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Pureish
 See also `t.isStringLiteralTypeAnnotation(node, opts)` and `t.assertStringLiteralTypeAnnotation(node, opts)`.
 
 AST Node `StringLiteralTypeAnnotation` shape:
-- `value`: `string` (required)
+- `value`: string (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -2828,8 +2830,8 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isSwitchCase(node, opts)` and `t.assertSwitchCase(node, opts)`.
 
 AST Node `SwitchCase` shape:
-- `test`: `0Expression` (default: `null`)
-- `consequent`: `Array<0Statement>` (required)
+- `test`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `consequent`: <span className="code">Array\<<span className="code">[Statement](#statement)</span>\></span> (required)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -2844,8 +2846,8 @@ Aliases: [`Standardized`](#standardized)
 See also `t.isSwitchStatement(node, opts)` and `t.assertSwitchStatement(node, opts)`.
 
 AST Node `SwitchStatement` shape:
-- `discriminant`: `0Expression` (required)
-- `cases`: `Array<0SwitchCase>` (required)
+- `discriminant`: <span className="code">[Expression](#expression)</span> (required)
+- `cases`: <span className="code">Array\<<span className="code">[SwitchCase](#switchcase)</span>\></span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`BlockParent`](#blockparent), [`Scopable`](#scopable)
 
@@ -2884,7 +2886,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSArrayType(node, opts)` and `t.assertTSArrayType(node, opts)`.
 
 AST Node `TSArrayType` shape:
-- `elementType`: `0TSType` (required)
+- `elementType`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -2899,8 +2901,8 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSAsExpression(node, opts)` and `t.assertTSAsExpression(node, opts)`.
 
 AST Node `TSAsExpression` shape:
-- `expression`: `0Expression` (required)
-- `typeAnnotation`: `0TSType` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`Expression`](#expression), [`LVal`](#lval), [`PatternLike`](#patternlike)
 
@@ -2939,9 +2941,9 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSCallSignatureDeclaration(node, opts)` and `t.assertTSCallSignatureDeclaration(node, opts)`.
 
 AST Node `TSCallSignatureDeclaration` shape:
-- `typeParameters`: `0TSTypeParameterDeclaration` (default: `null`)
-- `parameters`: `Array<0ArrayPattern | 0Identifier | 0ObjectPattern | 0RestElement>` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration)</span> (default: `null`)
+- `parameters`: <span className="code">Array\<<span className="code">[ArrayPattern](#arraypattern) | [Identifier](#identifier) | [ObjectPattern](#objectpattern) | [RestElement](#restelement)</span>\></span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 
@@ -2956,10 +2958,10 @@ Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 See also `t.isTSConditionalType(node, opts)` and `t.assertTSConditionalType(node, opts)`.
 
 AST Node `TSConditionalType` shape:
-- `checkType`: `0TSType` (required)
-- `extendsType`: `0TSType` (required)
-- `trueType`: `0TSType` (required)
-- `falseType`: `0TSType` (required)
+- `checkType`: <span className="code">[TSType](#tstype)</span> (required)
+- `extendsType`: <span className="code">[TSType](#tstype)</span> (required)
+- `trueType`: <span className="code">[TSType](#tstype)</span> (required)
+- `falseType`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -2974,9 +2976,9 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSConstructSignatureDeclaration(node, opts)` and `t.assertTSConstructSignatureDeclaration(node, opts)`.
 
 AST Node `TSConstructSignatureDeclaration` shape:
-- `typeParameters`: `0TSTypeParameterDeclaration` (default: `null`)
-- `parameters`: `Array<0ArrayPattern | 0Identifier | 0ObjectPattern | 0RestElement>` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration)</span> (default: `null`)
+- `parameters`: <span className="code">Array\<<span className="code">[ArrayPattern](#arraypattern) | [Identifier](#identifier) | [ObjectPattern](#objectpattern) | [RestElement](#restelement)</span>\></span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 
@@ -2991,10 +2993,10 @@ Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 See also `t.isTSConstructorType(node, opts)` and `t.assertTSConstructorType(node, opts)`.
 
 AST Node `TSConstructorType` shape:
-- `typeParameters`: `0TSTypeParameterDeclaration` (default: `null`)
-- `parameters`: `Array<0ArrayPattern | 0Identifier | 0ObjectPattern | 0RestElement>` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
-- `abstract`: `boolean` (default: `null`, excluded from builder function)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration)</span> (default: `null`)
+- `parameters`: <span className="code">Array\<<span className="code">[ArrayPattern](#arraypattern) | [Identifier](#identifier) | [ObjectPattern](#objectpattern) | [RestElement](#restelement)</span>\></span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
+- `abstract`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3009,13 +3011,13 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSDeclareFunction(node, opts)` and `t.assertTSDeclareFunction(node, opts)`.
 
 AST Node `TSDeclareFunction` shape:
-- `id`: `0Identifier` (default: `null`)
-- `typeParameters`: `0TSTypeParameterDeclaration | 0Noop` (default: `null`)
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement>` (required)
-- `returnType`: `0TSTypeAnnotation | 0Noop` (default: `null`)
-- `async`: `boolean` (default: `false`, excluded from builder function)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
-- `generator`: `boolean` (default: `false`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (default: `null`)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement)</span>\></span> (required)
+- `returnType`: <span className="code">[TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`)
+- `async`: boolean (default: `false`, excluded from builder function)
+- `declare`: boolean (default: `null`, excluded from builder function)
+- `generator`: boolean (default: `false`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -3030,21 +3032,21 @@ Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`]
 See also `t.isTSDeclareMethod(node, opts)` and `t.assertTSDeclareMethod(node, opts)`.
 
 AST Node `TSDeclareMethod` shape:
-- `decorators`: `Array<0Decorator>` (default: `null`)
-- `key`: `0Identifier | 0StringLiteral | 0NumericLiteral | 0BigIntLiteral | 0Expression` (required)
-- `typeParameters`: `0TSTypeParameterDeclaration | 0Noop` (default: `null`)
-- `params`: `Array<0Identifier | 0Pattern | 0RestElement | 0TSParameterProperty>` (required)
-- `returnType`: `0TSTypeAnnotation | 0Noop` (default: `null`)
-- `abstract`: `boolean` (default: `null`, excluded from builder function)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`)
+- `key`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral) | [NumericLiteral](#numericliteral) | [BigIntLiteral](#bigintliteral) | [Expression](#expression)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration) | [Noop](#noop)</span> (default: `null`)
+- `params`: <span className="code">Array\<<span className="code">[Identifier](#identifier) | [Pattern](#pattern) | [RestElement](#restelement) | [TSParameterProperty](#tsparameterproperty)</span>\></span> (required)
+- `returnType`: <span className="code">[TSTypeAnnotation](#tstypeannotation) | [Noop](#noop)</span> (default: `null`)
+- `abstract`: boolean (default: `null`, excluded from builder function)
 - `access`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
 - `accessibility`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
-- `async`: `boolean` (default: `false`, excluded from builder function)
-- `computed`: `boolean` (default: `false`, excluded from builder function)
-- `generator`: `boolean` (default: `false`, excluded from builder function)
+- `async`: boolean (default: `false`, excluded from builder function)
+- `computed`: boolean (default: `false`, excluded from builder function)
+- `generator`: boolean (default: `false`, excluded from builder function)
 - `kind`: `"get" | "set" | "method" | "constructor"` (default: `'method'`, excluded from builder function)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `override`: `boolean` (default: `false`, excluded from builder function)
-- `static`: `boolean` (default: `false`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `override`: boolean (default: `false`, excluded from builder function)
+- `static`: boolean (default: `false`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3059,11 +3061,11 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSEnumDeclaration(node, opts)` and `t.assertTSEnumDeclaration(node, opts)`.
 
 AST Node `TSEnumDeclaration` shape:
-- `id`: `0Identifier` (required)
-- `members`: `Array<0TSEnumMember>` (required)
-- `const`: `boolean` (default: `null`, excluded from builder function)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
-- `initializer`: `0Expression` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `members`: <span className="code">Array\<<span className="code">[TSEnumMember](#tsenummember)</span>\></span> (required)
+- `const`: boolean (default: `null`, excluded from builder function)
+- `declare`: boolean (default: `null`, excluded from builder function)
+- `initializer`: <span className="code">[Expression](#expression)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -3078,8 +3080,8 @@ Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`]
 See also `t.isTSEnumMember(node, opts)` and `t.assertTSEnumMember(node, opts)`.
 
 AST Node `TSEnumMember` shape:
-- `id`: `0Identifier | 0StringLiteral` (required)
-- `initializer`: `0Expression` (default: `null`)
+- `id`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral)</span> (required)
+- `initializer`: <span className="code">[Expression](#expression)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3094,7 +3096,7 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSExportAssignment(node, opts)` and `t.assertTSExportAssignment(node, opts)`.
 
 AST Node `TSExportAssignment` shape:
-- `expression`: `0Expression` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement)
 
@@ -3109,8 +3111,8 @@ Aliases: [`TypeScript`](#typescript), [`Statement`](#statement)
 See also `t.isTSExpressionWithTypeArguments(node, opts)` and `t.assertTSExpressionWithTypeArguments(node, opts)`.
 
 AST Node `TSExpressionWithTypeArguments` shape:
-- `expression`: `0TSEntityName` (required)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`)
+- `expression`: <span className="code">[TSEntityName](#tsentityname)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3125,7 +3127,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSExternalModuleReference(node, opts)` and `t.assertTSExternalModuleReference(node, opts)`.
 
 AST Node `TSExternalModuleReference` shape:
-- `expression`: `0StringLiteral` (required)
+- `expression`: <span className="code">[StringLiteral](#stringliteral)</span> (required)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3140,9 +3142,9 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSFunctionType(node, opts)` and `t.assertTSFunctionType(node, opts)`.
 
 AST Node `TSFunctionType` shape:
-- `typeParameters`: `0TSTypeParameterDeclaration` (default: `null`)
-- `parameters`: `Array<0ArrayPattern | 0Identifier | 0ObjectPattern | 0RestElement>` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration)</span> (default: `null`)
+- `parameters`: <span className="code">Array\<<span className="code">[ArrayPattern](#arraypattern) | [Identifier](#identifier) | [ObjectPattern](#objectpattern) | [RestElement](#restelement)</span>\></span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3157,10 +3159,10 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSImportEqualsDeclaration(node, opts)` and `t.assertTSImportEqualsDeclaration(node, opts)`.
 
 AST Node `TSImportEqualsDeclaration` shape:
-- `id`: `0Identifier` (required)
-- `moduleReference`: `0TSEntityName | 0TSExternalModuleReference` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `moduleReference`: <span className="code">[TSEntityName](#tsentityname) | [TSExternalModuleReference](#tsexternalmodulereference)</span> (required)
 - `importKind`: `"type" | "value"` (default: `null`, excluded from builder function)
-- `isExport`: `boolean` (required)
+- `isExport`: boolean (required)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement)
 
@@ -3175,9 +3177,9 @@ Aliases: [`TypeScript`](#typescript), [`Statement`](#statement)
 See also `t.isTSImportType(node, opts)` and `t.assertTSImportType(node, opts)`.
 
 AST Node `TSImportType` shape:
-- `argument`: `0StringLiteral` (required)
-- `qualifier`: `0TSEntityName` (default: `null`)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`)
+- `argument`: <span className="code">[StringLiteral](#stringliteral)</span> (required)
+- `qualifier`: <span className="code">[TSEntityName](#tsentityname)</span> (default: `null`)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3192,10 +3194,10 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSIndexSignature(node, opts)` and `t.assertTSIndexSignature(node, opts)`.
 
 AST Node `TSIndexSignature` shape:
-- `parameters`: `Array<0Identifier>` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
-- `readonly`: `boolean` (default: `null`, excluded from builder function)
-- `static`: `boolean` (default: `null`, excluded from builder function)
+- `parameters`: <span className="code">Array\<<span className="code">[Identifier](#identifier)</span>\></span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
+- `readonly`: boolean (default: `null`, excluded from builder function)
+- `static`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 
@@ -3210,8 +3212,8 @@ Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 See also `t.isTSIndexedAccessType(node, opts)` and `t.assertTSIndexedAccessType(node, opts)`.
 
 AST Node `TSIndexedAccessType` shape:
-- `objectType`: `0TSType` (required)
-- `indexType`: `0TSType` (required)
+- `objectType`: <span className="code">[TSType](#tstype)</span> (required)
+- `indexType`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3226,7 +3228,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSInferType(node, opts)` and `t.assertTSInferType(node, opts)`.
 
 AST Node `TSInferType` shape:
-- `typeParameter`: `0TSTypeParameter` (required)
+- `typeParameter`: <span className="code">[TSTypeParameter](#tstypeparameter)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3241,8 +3243,8 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSInstantiationExpression(node, opts)` and `t.assertTSInstantiationExpression(node, opts)`.
 
 AST Node `TSInstantiationExpression` shape:
-- `expression`: `0Expression` (required)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`Expression`](#expression)
 
@@ -3257,7 +3259,7 @@ Aliases: [`TypeScript`](#typescript), [`Expression`](#expression)
 See also `t.isTSInterfaceBody(node, opts)` and `t.assertTSInterfaceBody(node, opts)`.
 
 AST Node `TSInterfaceBody` shape:
-- `body`: `Array<0TSTypeElement>` (required)
+- `body`: <span className="code">Array\<<span className="code">[TSTypeElement](#tstypeelement)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3272,11 +3274,11 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSInterfaceDeclaration(node, opts)` and `t.assertTSInterfaceDeclaration(node, opts)`.
 
 AST Node `TSInterfaceDeclaration` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TSTypeParameterDeclaration` (default: `null`)
-- `extends`: `Array<0TSExpressionWithTypeArguments>` (default: `null`)
-- `body`: `0TSInterfaceBody` (required)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration)</span> (default: `null`)
+- `extends`: <span className="code">Array\<<span className="code">[TSExpressionWithTypeArguments](#tsexpressionwithtypearguments)</span>\></span> (default: `null`)
+- `body`: <span className="code">[TSInterfaceBody](#tsinterfacebody)</span> (required)
+- `declare`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -3291,7 +3293,7 @@ Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`]
 See also `t.isTSIntersectionType(node, opts)` and `t.assertTSIntersectionType(node, opts)`.
 
 AST Node `TSIntersectionType` shape:
-- `types`: `Array<0TSType>` (required)
+- `types`: <span className="code">Array\<<span className="code">[TSType](#tstype)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3318,7 +3320,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSLiteralType(node, opts)` and `t.assertTSLiteralType(node, opts)`.
 
 AST Node `TSLiteralType` shape:
-- `literal`: `0NumericLiteral | 0StringLiteral | 0BooleanLiteral | 0BigIntLiteral | 0TemplateLiteral | 0UnaryExpression` (required)
+- `literal`: <span className="code">[NumericLiteral](#numericliteral) | [StringLiteral](#stringliteral) | [BooleanLiteral](#booleanliteral) | [BigIntLiteral](#bigintliteral) | [TemplateLiteral](#templateliteral) | [UnaryExpression](#unaryexpression)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbasetype)
 
@@ -3333,9 +3335,9 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSMappedType(node, opts)` and `t.assertTSMappedType(node, opts)`.
 
 AST Node `TSMappedType` shape:
-- `typeParameter`: `0TSTypeParameter` (required)
-- `typeAnnotation`: `0TSType` (default: `null`)
-- `nameType`: `0TSType` (default: `null`)
+- `typeParameter`: <span className="code">[TSTypeParameter](#tstypeparameter)</span> (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (default: `null`)
+- `nameType`: <span className="code">[TSType](#tstype)</span> (default: `null`)
 - `optional`: `true | false | "+" | "-"` (default: `null`, excluded from builder function)
 - `readonly`: `true | false | "+" | "-"` (default: `null`, excluded from builder function)
 
@@ -3352,13 +3354,13 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSMethodSignature(node, opts)` and `t.assertTSMethodSignature(node, opts)`.
 
 AST Node `TSMethodSignature` shape:
-- `key`: `0Expression` (required)
-- `typeParameters`: `0TSTypeParameterDeclaration` (default: `null`)
-- `parameters`: `Array<0ArrayPattern | 0Identifier | 0ObjectPattern | 0RestElement>` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
-- `computed`: `boolean` (default: `false`, excluded from builder function)
+- `key`: <span className="code">[Expression](#expression)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration)</span> (default: `null`)
+- `parameters`: <span className="code">Array\<<span className="code">[ArrayPattern](#arraypattern) | [Identifier](#identifier) | [ObjectPattern](#objectpattern) | [RestElement](#restelement)</span>\></span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
+- `computed`: boolean (default: `false`, excluded from builder function)
 - `kind`: `"method" | "get" | "set"` (required)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 
@@ -3373,7 +3375,7 @@ Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 See also `t.isTSModuleBlock(node, opts)` and `t.assertTSModuleBlock(node, opts)`.
 
 AST Node `TSModuleBlock` shape:
-- `body`: `Array<0Statement>` (required)
+- `body`: <span className="code">Array\<<span className="code">[Statement](#statement)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`Scopable`](#scopable), [`Block`](#block), [`BlockParent`](#blockparent), [`FunctionParent`](#functionparent)
 
@@ -3388,10 +3390,10 @@ Aliases: [`TypeScript`](#typescript), [`Scopable`](#scopable), [`Block`](#block)
 See also `t.isTSModuleDeclaration(node, opts)` and `t.assertTSModuleDeclaration(node, opts)`.
 
 AST Node `TSModuleDeclaration` shape:
-- `id`: `0Identifier | 0StringLiteral` (required)
-- `body`: `0TSModuleBlock | 0TSModuleDeclaration` (required)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
-- `global`: `boolean` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier) | [StringLiteral](#stringliteral)</span> (required)
+- `body`: <span className="code">[TSModuleBlock](#tsmoduleblock) | [TSModuleDeclaration](#tsmoduledeclaration)</span> (required)
+- `declare`: boolean (default: `null`, excluded from builder function)
+- `global`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -3406,9 +3408,9 @@ Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`]
 See also `t.isTSNamedTupleMember(node, opts)` and `t.assertTSNamedTupleMember(node, opts)`.
 
 AST Node `TSNamedTupleMember` shape:
-- `label`: `0Identifier` (required)
-- `elementType`: `0TSType` (required)
-- `optional`: `boolean` (default: `false`)
+- `label`: <span className="code">[Identifier](#identifier)</span> (required)
+- `elementType`: <span className="code">[TSType](#tstype)</span> (required)
+- `optional`: boolean (default: `false`)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3423,7 +3425,7 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSNamespaceExportDeclaration(node, opts)` and `t.assertTSNamespaceExportDeclaration(node, opts)`.
 
 AST Node `TSNamespaceExportDeclaration` shape:
-- `id`: `0Identifier` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement)
 
@@ -3450,7 +3452,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSNonNullExpression(node, opts)` and `t.assertTSNonNullExpression(node, opts)`.
 
 AST Node `TSNonNullExpression` shape:
-- `expression`: `0Expression` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`Expression`](#expression), [`LVal`](#lval), [`PatternLike`](#patternlike)
 
@@ -3501,7 +3503,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSOptionalType(node, opts)` and `t.assertTSOptionalType(node, opts)`.
 
 AST Node `TSOptionalType` shape:
-- `typeAnnotation`: `0TSType` (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3516,11 +3518,11 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSParameterProperty(node, opts)` and `t.assertTSParameterProperty(node, opts)`.
 
 AST Node `TSParameterProperty` shape:
-- `parameter`: `0Identifier | 0AssignmentPattern` (required)
+- `parameter`: <span className="code">[Identifier](#identifier) | [AssignmentPattern](#assignmentpattern)</span> (required)
 - `accessibility`: `"public" | "private" | "protected"` (default: `null`, excluded from builder function)
-- `decorators`: `Array<0Decorator>` (default: `null`, excluded from builder function)
-- `override`: `boolean` (default: `null`, excluded from builder function)
-- `readonly`: `boolean` (default: `null`, excluded from builder function)
+- `decorators`: <span className="code">Array\<<span className="code">[Decorator](#decorator)</span>\></span> (default: `null`, excluded from builder function)
+- `override`: boolean (default: `null`, excluded from builder function)
+- `readonly`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`LVal`](#lval)
 
@@ -3535,7 +3537,7 @@ Aliases: [`TypeScript`](#typescript), [`LVal`](#lval)
 See also `t.isTSParenthesizedType(node, opts)` and `t.assertTSParenthesizedType(node, opts)`.
 
 AST Node `TSParenthesizedType` shape:
-- `typeAnnotation`: `0TSType` (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3550,13 +3552,13 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSPropertySignature(node, opts)` and `t.assertTSPropertySignature(node, opts)`.
 
 AST Node `TSPropertySignature` shape:
-- `key`: `0Expression` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
-- `initializer`: `0Expression` (default: `null`)
-- `computed`: `boolean` (default: `false`, excluded from builder function)
+- `key`: <span className="code">[Expression](#expression)</span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
+- `initializer`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `computed`: boolean (default: `false`, excluded from builder function)
 - `kind`: `"get" | "set"` (required)
-- `optional`: `boolean` (default: `null`, excluded from builder function)
-- `readonly`: `boolean` (default: `null`, excluded from builder function)
+- `optional`: boolean (default: `null`, excluded from builder function)
+- `readonly`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 
@@ -3571,8 +3573,8 @@ Aliases: [`TypeScript`](#typescript), [`TSTypeElement`](#tstypeelement)
 See also `t.isTSQualifiedName(node, opts)` and `t.assertTSQualifiedName(node, opts)`.
 
 AST Node `TSQualifiedName` shape:
-- `left`: `0TSEntityName` (required)
-- `right`: `0Identifier` (required)
+- `left`: <span className="code">[TSEntityName](#tsentityname)</span> (required)
+- `right`: <span className="code">[Identifier](#identifier)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSEntityName`](#tsentityname)
 
@@ -3587,7 +3589,7 @@ Aliases: [`TypeScript`](#typescript), [`TSEntityName`](#tsentityname)
 See also `t.isTSRestType(node, opts)` and `t.assertTSRestType(node, opts)`.
 
 AST Node `TSRestType` shape:
-- `typeAnnotation`: `0TSType` (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3610,8 +3612,8 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSSatisfiesExpression(node, opts)` and `t.assertTSSatisfiesExpression(node, opts)`.
 
 AST Node `TSSatisfiesExpression` shape:
-- `expression`: `0Expression` (required)
-- `typeAnnotation`: `0TSType` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`Expression`](#expression), [`LVal`](#lval), [`PatternLike`](#patternlike)
 
@@ -3662,7 +3664,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSTupleType(node, opts)` and `t.assertTSTupleType(node, opts)`.
 
 AST Node `TSTupleType` shape:
-- `elementTypes`: `Array<0TSType | 0TSNamedTupleMember>` (required)
+- `elementTypes`: <span className="code">Array\<<span className="code">[TSType](#tstype) | [TSNamedTupleMember](#tsnamedtuplemember)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3677,10 +3679,10 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSTypeAliasDeclaration(node, opts)` and `t.assertTSTypeAliasDeclaration(node, opts)`.
 
 AST Node `TSTypeAliasDeclaration` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TSTypeParameterDeclaration` (default: `null`)
-- `typeAnnotation`: `0TSType` (required)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterDeclaration](#tstypeparameterdeclaration)</span> (default: `null`)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
+- `declare`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -3695,7 +3697,7 @@ Aliases: [`TypeScript`](#typescript), [`Statement`](#statement), [`Declaration`]
 See also `t.isTSTypeAnnotation(node, opts)` and `t.assertTSTypeAnnotation(node, opts)`.
 
 AST Node `TSTypeAnnotation` shape:
-- `typeAnnotation`: `0TSType` (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3710,8 +3712,8 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSTypeAssertion(node, opts)` and `t.assertTSTypeAssertion(node, opts)`.
 
 AST Node `TSTypeAssertion` shape:
-- `typeAnnotation`: `0TSType` (required)
-- `expression`: `0Expression` (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`Expression`](#expression), [`LVal`](#lval), [`PatternLike`](#patternlike)
 
@@ -3726,7 +3728,7 @@ Aliases: [`TypeScript`](#typescript), [`Expression`](#expression), [`LVal`](#lva
 See also `t.isTSTypeLiteral(node, opts)` and `t.assertTSTypeLiteral(node, opts)`.
 
 AST Node `TSTypeLiteral` shape:
-- `members`: `Array<0TSTypeElement>` (required)
+- `members`: <span className="code">Array\<<span className="code">[TSTypeElement](#tstypeelement)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3741,8 +3743,8 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSTypeOperator(node, opts)` and `t.assertTSTypeOperator(node, opts)`.
 
 AST Node `TSTypeOperator` shape:
-- `typeAnnotation`: `0TSType` (required)
-- `operator`: `string` (required)
+- `typeAnnotation`: <span className="code">[TSType](#tstype)</span> (required)
+- `operator`: string (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3765,12 +3767,12 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSTypeParameter(node, opts)` and `t.assertTSTypeParameter(node, opts)`.
 
 AST Node `TSTypeParameter` shape:
-- `constraint`: `0TSType` (default: `null`)
-- `default`: `0TSType` (default: `null`)
-- `name`: `string` (required)
-- `const`: `boolean` (default: `null`, excluded from builder function)
-- `in`: `boolean` (default: `null`, excluded from builder function)
-- `out`: `boolean` (default: `null`, excluded from builder function)
+- `constraint`: <span className="code">[TSType](#tstype)</span> (default: `null`)
+- `default`: <span className="code">[TSType](#tstype)</span> (default: `null`)
+- `name`: string (required)
+- `const`: boolean (default: `null`, excluded from builder function)
+- `in`: boolean (default: `null`, excluded from builder function)
+- `out`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3785,7 +3787,7 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSTypeParameterDeclaration(node, opts)` and `t.assertTSTypeParameterDeclaration(node, opts)`.
 
 AST Node `TSTypeParameterDeclaration` shape:
-- `params`: `Array<0TSTypeParameter>` (required)
+- `params`: <span className="code">Array\<<span className="code">[TSTypeParameter](#tstypeparameter)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3800,7 +3802,7 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSTypeParameterInstantiation(node, opts)` and `t.assertTSTypeParameterInstantiation(node, opts)`.
 
 AST Node `TSTypeParameterInstantiation` shape:
-- `params`: `Array<0TSType>` (required)
+- `params`: <span className="code">Array\<<span className="code">[TSType](#tstype)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript)
 
@@ -3815,9 +3817,9 @@ Aliases: [`TypeScript`](#typescript)
 See also `t.isTSTypePredicate(node, opts)` and `t.assertTSTypePredicate(node, opts)`.
 
 AST Node `TSTypePredicate` shape:
-- `parameterName`: `0Identifier | 0TSThisType` (required)
-- `typeAnnotation`: `0TSTypeAnnotation` (default: `null`)
-- `asserts`: `boolean` (default: `null`)
+- `parameterName`: <span className="code">[Identifier](#identifier) | [TSThisType](#tsthistype)</span> (required)
+- `typeAnnotation`: <span className="code">[TSTypeAnnotation](#tstypeannotation)</span> (default: `null`)
+- `asserts`: boolean (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3832,8 +3834,8 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSTypeQuery(node, opts)` and `t.assertTSTypeQuery(node, opts)`.
 
 AST Node `TSTypeQuery` shape:
-- `exprName`: `0TSEntityName | 0TSImportType` (required)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`)
+- `exprName`: <span className="code">[TSEntityName](#tsentityname) | [TSImportType](#tsimporttype)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3848,8 +3850,8 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 See also `t.isTSTypeReference(node, opts)` and `t.assertTSTypeReference(node, opts)`.
 
 AST Node `TSTypeReference` shape:
-- `typeName`: `0TSEntityName` (required)
-- `typeParameters`: `0TSTypeParameterInstantiation` (default: `null`)
+- `typeName`: <span className="code">[TSEntityName](#tsentityname)</span> (required)
+- `typeParameters`: <span className="code">[TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3876,7 +3878,7 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTSUnionType(node, opts)` and `t.assertTSUnionType(node, opts)`.
 
 AST Node `TSUnionType` shape:
-- `types`: `Array<0TSType>` (required)
+- `types`: <span className="code">Array\<<span className="code">[TSType](#tstype)</span>\></span> (required)
 
 Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype)
 
@@ -3915,9 +3917,9 @@ Aliases: [`TypeScript`](#typescript), [`TSType`](#tstype), [`TSBaseType`](#tsbas
 See also `t.isTaggedTemplateExpression(node, opts)` and `t.assertTaggedTemplateExpression(node, opts)`.
 
 AST Node `TaggedTemplateExpression` shape:
-- `tag`: `0Expression` (required)
-- `quasi`: `0TemplateLiteral` (required)
-- `typeParameters`: `0TypeParameterInstantiation | 0TSTypeParameterInstantiation` (default: `null`, excluded from builder function)
+- `tag`: <span className="code">[Expression](#expression)</span> (required)
+- `quasi`: <span className="code">[TemplateLiteral](#templateliteral)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterInstantiation](#typeparameterinstantiation) | [TSTypeParameterInstantiation](#tstypeparameterinstantiation)</span> (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -3933,7 +3935,7 @@ See also `t.isTemplateElement(node, opts)` and `t.assertTemplateElement(node, op
 
 AST Node `TemplateElement` shape:
 - `value`: `{ raw: string, cooked?: string }` (required)
-- `tail`: `boolean` (default: `false`)
+- `tail`: boolean (default: `false`)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -3948,8 +3950,8 @@ Aliases: [`Standardized`](#standardized)
 See also `t.isTemplateLiteral(node, opts)` and `t.assertTemplateLiteral(node, opts)`.
 
 AST Node `TemplateLiteral` shape:
-- `quasis`: `Array<0TemplateElement>` (required)
-- `expressions`: `Array<0Expression | 0TSType>` (required)
+- `quasis`: <span className="code">Array\<<span className="code">[TemplateElement](#templateelement)</span>\></span> (required)
+- `expressions`: <span className="code">Array\<<span className="code">[Expression](#expression) | [TSType](#tstype)</span>\></span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Literal`](#literal)
 
@@ -3988,7 +3990,7 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype), [`FlowBaseAnnotation`](#flowb
 See also `t.isThrowStatement(node, opts)` and `t.assertThrowStatement(node, opts)`.
 
 AST Node `ThrowStatement` shape:
-- `argument`: `0Expression` (required)
+- `argument`: <span className="code">[Expression](#expression)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Terminatorless`](#terminatorless), [`CompletionStatement`](#completionstatement)
 
@@ -4015,9 +4017,9 @@ Aliases: [`Expression`](#expression)
 See also `t.isTryStatement(node, opts)` and `t.assertTryStatement(node, opts)`.
 
 AST Node `TryStatement` shape:
-- `block`: `0BlockStatement` (required)
-- `handler`: `0CatchClause` (default: `null`)
-- `finalizer`: `0BlockStatement` (default: `null`)
+- `block`: <span className="code">[BlockStatement](#blockstatement)</span> (required)
+- `handler`: <span className="code">[CatchClause](#catchclause)</span> (default: `null`)
+- `finalizer`: <span className="code">[BlockStatement](#blockstatement)</span> (default: `null`)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement)
 
@@ -4032,7 +4034,7 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement)
 See also `t.isTupleExpression(node, opts)` and `t.assertTupleExpression(node, opts)`.
 
 AST Node `TupleExpression` shape:
-- `elements`: `Array<0Expression | 0SpreadElement>` (default: `[]`)
+- `elements`: <span className="code">Array\<<span className="code">[Expression](#expression) | [SpreadElement](#spreadelement)</span>\></span> (default: `[]`)
 
 Aliases: [`Expression`](#expression)
 
@@ -4047,7 +4049,7 @@ Aliases: [`Expression`](#expression)
 See also `t.isTupleTypeAnnotation(node, opts)` and `t.assertTupleTypeAnnotation(node, opts)`.
 
 AST Node `TupleTypeAnnotation` shape:
-- `types`: `Array<0FlowType>` (required)
+- `types`: <span className="code">Array\<<span className="code">[FlowType](#flowtype)</span>\></span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -4062,9 +4064,9 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 See also `t.isTypeAlias(node, opts)` and `t.assertTypeAlias(node, opts)`.
 
 AST Node `TypeAlias` shape:
-- `id`: `0Identifier` (required)
-- `typeParameters`: `0TypeParameterDeclaration` (default: `null`)
-- `right`: `0FlowType` (required)
+- `id`: <span className="code">[Identifier](#identifier)</span> (required)
+- `typeParameters`: <span className="code">[TypeParameterDeclaration](#typeparameterdeclaration)</span> (default: `null`)
+- `right`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -4079,7 +4081,7 @@ Aliases: [`Flow`](#flow), [`FlowDeclaration`](#flowdeclaration), [`Statement`](#
 See also `t.isTypeAnnotation(node, opts)` and `t.assertTypeAnnotation(node, opts)`.
 
 AST Node `TypeAnnotation` shape:
-- `typeAnnotation`: `0FlowType` (required)
+- `typeAnnotation`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow)
 
@@ -4094,8 +4096,8 @@ Aliases: [`Flow`](#flow)
 See also `t.isTypeCastExpression(node, opts)` and `t.assertTypeCastExpression(node, opts)`.
 
 AST Node `TypeCastExpression` shape:
-- `expression`: `0Expression` (required)
-- `typeAnnotation`: `0TypeAnnotation` (required)
+- `expression`: <span className="code">[Expression](#expression)</span> (required)
+- `typeAnnotation`: <span className="code">[TypeAnnotation](#typeannotation)</span> (required)
 
 Aliases: [`Flow`](#flow), [`ExpressionWrapper`](#expressionwrapper), [`Expression`](#expression)
 
@@ -4110,10 +4112,10 @@ Aliases: [`Flow`](#flow), [`ExpressionWrapper`](#expressionwrapper), [`Expressio
 See also `t.isTypeParameter(node, opts)` and `t.assertTypeParameter(node, opts)`.
 
 AST Node `TypeParameter` shape:
-- `bound`: `0TypeAnnotation` (default: `null`)
-- `default`: `0FlowType` (default: `null`)
-- `variance`: `0Variance` (default: `null`)
-- `name`: `string` (required)
+- `bound`: <span className="code">[TypeAnnotation](#typeannotation)</span> (default: `null`)
+- `default`: <span className="code">[FlowType](#flowtype)</span> (default: `null`)
+- `variance`: <span className="code">[Variance](#variance)</span> (default: `null`)
+- `name`: string (required)
 
 Aliases: [`Flow`](#flow)
 
@@ -4128,7 +4130,7 @@ Aliases: [`Flow`](#flow)
 See also `t.isTypeParameterDeclaration(node, opts)` and `t.assertTypeParameterDeclaration(node, opts)`.
 
 AST Node `TypeParameterDeclaration` shape:
-- `params`: `Array<0TypeParameter>` (required)
+- `params`: <span className="code">Array\<<span className="code">[TypeParameter](#typeparameter)</span>\></span> (required)
 
 Aliases: [`Flow`](#flow)
 
@@ -4143,7 +4145,7 @@ Aliases: [`Flow`](#flow)
 See also `t.isTypeParameterInstantiation(node, opts)` and `t.assertTypeParameterInstantiation(node, opts)`.
 
 AST Node `TypeParameterInstantiation` shape:
-- `params`: `Array<0FlowType>` (required)
+- `params`: <span className="code">Array\<<span className="code">[FlowType](#flowtype)</span>\></span> (required)
 
 Aliases: [`Flow`](#flow)
 
@@ -4158,7 +4160,7 @@ Aliases: [`Flow`](#flow)
 See also `t.isTypeofTypeAnnotation(node, opts)` and `t.assertTypeofTypeAnnotation(node, opts)`.
 
 AST Node `TypeofTypeAnnotation` shape:
-- `argument`: `0FlowType` (required)
+- `argument`: <span className="code">[FlowType](#flowtype)</span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -4174,8 +4176,8 @@ See also `t.isUnaryExpression(node, opts)` and `t.assertUnaryExpression(node, op
 
 AST Node `UnaryExpression` shape:
 - `operator`: `"void" | "throw" | "delete" | "!" | "+" | "-" | "~" | "typeof"` (required)
-- `argument`: `0Expression` (required)
-- `prefix`: `boolean` (default: `true`)
+- `argument`: <span className="code">[Expression](#expression)</span> (required)
+- `prefix`: boolean (default: `true`)
 
 Aliases: [`Standardized`](#standardized), [`UnaryLike`](#unarylike), [`Expression`](#expression)
 
@@ -4190,7 +4192,7 @@ Aliases: [`Standardized`](#standardized), [`UnaryLike`](#unarylike), [`Expressio
 See also `t.isUnionTypeAnnotation(node, opts)` and `t.assertUnionTypeAnnotation(node, opts)`.
 
 AST Node `UnionTypeAnnotation` shape:
-- `types`: `Array<0FlowType>` (required)
+- `types`: <span className="code">Array\<<span className="code">[FlowType](#flowtype)</span>\></span> (required)
 
 Aliases: [`Flow`](#flow), [`FlowType`](#flowtype)
 
@@ -4206,8 +4208,8 @@ See also `t.isUpdateExpression(node, opts)` and `t.assertUpdateExpression(node, 
 
 AST Node `UpdateExpression` shape:
 - `operator`: `"++" | "--"` (required)
-- `argument`: `0Expression` (required)
-- `prefix`: `boolean` (default: `false`)
+- `argument`: <span className="code">[Expression](#expression)</span> (required)
+- `prefix`: boolean (default: `false`)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 
@@ -4222,7 +4224,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression)
 See also `t.isV8IntrinsicIdentifier(node, opts)` and `t.assertV8IntrinsicIdentifier(node, opts)`.
 
 AST Node `V8IntrinsicIdentifier` shape:
-- `name`: `string` (required)
+- `name`: string (required)
 
 Aliases: [`Miscellaneous`](#miscellaneous)
 
@@ -4246,8 +4248,8 @@ See also `t.isVariableDeclaration(node, opts)` and `t.assertVariableDeclaration(
 
 AST Node `VariableDeclaration` shape:
 - `kind`: `"var" | "let" | "const" | "using" | "await using"` (required)
-- `declarations`: `Array<0VariableDeclarator>` (required)
-- `declare`: `boolean` (default: `null`, excluded from builder function)
+- `declarations`: <span className="code">Array\<<span className="code">[VariableDeclarator](#variabledeclarator)</span>\></span> (required)
+- `declare`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declaration`](#declaration)
 
@@ -4262,9 +4264,9 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`Declarati
 See also `t.isVariableDeclarator(node, opts)` and `t.assertVariableDeclarator(node, opts)`.
 
 AST Node `VariableDeclarator` shape:
-- `id`: `0LVal` (required)
-- `init`: `0Expression` (default: `null`)
-- `definite`: `boolean` (default: `null`, excluded from builder function)
+- `id`: <span className="code">[LVal](#lval)</span> (required)
+- `init`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `definite`: boolean (default: `null`, excluded from builder function)
 
 Aliases: [`Standardized`](#standardized)
 
@@ -4306,8 +4308,8 @@ Aliases: [`Flow`](#flow), [`FlowType`](#flowtype), [`FlowBaseAnnotation`](#flowb
 See also `t.isWhileStatement(node, opts)` and `t.assertWhileStatement(node, opts)`.
 
 AST Node `WhileStatement` shape:
-- `test`: `0Expression` (required)
-- `body`: `0Statement` (required)
+- `test`: <span className="code">[Expression](#expression)</span> (required)
+- `body`: <span className="code">[Statement](#statement)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`BlockParent`](#blockparent), [`Loop`](#loop), [`While`](#while), [`Scopable`](#scopable)
 
@@ -4322,8 +4324,8 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement), [`BlockPare
 See also `t.isWithStatement(node, opts)` and `t.assertWithStatement(node, opts)`.
 
 AST Node `WithStatement` shape:
-- `object`: `0Expression` (required)
-- `body`: `0Statement` (required)
+- `object`: <span className="code">[Expression](#expression)</span> (required)
+- `body`: <span className="code">[Statement](#statement)</span> (required)
 
 Aliases: [`Standardized`](#standardized), [`Statement`](#statement)
 
@@ -4338,8 +4340,8 @@ Aliases: [`Standardized`](#standardized), [`Statement`](#statement)
 See also `t.isYieldExpression(node, opts)` and `t.assertYieldExpression(node, opts)`.
 
 AST Node `YieldExpression` shape:
-- `argument`: `0Expression` (default: `null`)
-- `delegate`: `boolean` (default: `false`)
+- `argument`: <span className="code">[Expression](#expression)</span> (default: `null`)
+- `delegate`: boolean (default: `false`)
 
 Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Terminatorless`](#terminatorless)
 
@@ -4350,9 +4352,7 @@ Aliases: [`Standardized`](#standardized), [`Expression`](#expression), [`Termina
 #### Accessor
 
 Deprecated. Will be removed in Babel 8.
-```js title="JavaScript"
-t.isAccessor(node);
-```
+<Code language="javascript">t.isAccessor(node);</Code>
 
 Covered nodes:
 - [`ClassAccessorProperty`](#classaccessorproperty)
@@ -4360,9 +4360,7 @@ Covered nodes:
 #### Binary
 
 A cover of BinaryExpression and LogicalExpression, which share the same AST shape.
-```js title="JavaScript"
-t.isBinary(node);
-```
+<Code language="javascript">t.isBinary(node);</Code>
 
 Covered nodes:
 - [`BinaryExpression`](#binaryexpression)
@@ -4371,9 +4369,7 @@ Covered nodes:
 #### Block
 
 Deprecated. Will be removed in Babel 8.
-```js title="JavaScript"
-t.isBlock(node);
-```
+<Code language="javascript">t.isBlock(node);</Code>
 
 Covered nodes:
 - [`BlockStatement`](#blockstatement)
@@ -4383,9 +4379,7 @@ Covered nodes:
 #### BlockParent
 
 A cover of AST nodes that start an execution context with new [LexicalEnvironment](https://tc39.es/ecma262/#table-additional-state-components-for-ecmascript-code-execution-contexts). In other words, they define the scope of `let` and `const` declarations.
-```js title="JavaScript"
-t.isBlockParent(node);
-```
+<Code language="javascript">t.isBlockParent(node);</Code>
 
 Covered nodes:
 - [`ArrowFunctionExpression`](#arrowfunctionexpression)
@@ -4409,9 +4403,7 @@ Covered nodes:
 #### Class
 
 A cover of ClassExpression and ClassDeclaration, which share the same AST shape.
-```js title="JavaScript"
-t.isClass(node);
-```
+<Code language="javascript">t.isClass(node);</Code>
 
 Covered nodes:
 - [`ClassDeclaration`](#classdeclaration)
@@ -4420,9 +4412,7 @@ Covered nodes:
 #### CompletionStatement
 
 A statement that indicates the [completion records](https://tc39.es/ecma262/#sec-completion-record-specification-type). In other words, they define the control flow of the program, such as when should a loop break or an action throws critical errors.
-```js title="JavaScript"
-t.isCompletionStatement(node);
-```
+<Code language="javascript">t.isCompletionStatement(node);</Code>
 
 Covered nodes:
 - [`BreakStatement`](#breakstatement)
@@ -4433,9 +4423,7 @@ Covered nodes:
 #### Conditional
 
 A cover of ConditionalExpression and IfStatement, which share the same AST shape.
-```js title="JavaScript"
-t.isConditional(node);
-```
+<Code language="javascript">t.isConditional(node);</Code>
 
 Covered nodes:
 - [`ConditionalExpression`](#conditionalexpression)
@@ -4444,9 +4432,7 @@ Covered nodes:
 #### Declaration
 
 A cover of any [Declaration](https://tc39.es/ecma262/#prod-Declaration)s.
-```js title="JavaScript"
-t.isDeclaration(node);
-```
+<Code language="javascript">t.isDeclaration(node);</Code>
 
 Covered nodes:
 - [`ClassDeclaration`](#classdeclaration)
@@ -4479,9 +4465,7 @@ Covered nodes:
 #### EnumBody
 
 A cover of Flow enum bodies.
-```js title="JavaScript"
-t.isEnumBody(node);
-```
+<Code language="javascript">t.isEnumBody(node);</Code>
 
 Covered nodes:
 - [`EnumBooleanBody`](#enumbooleanbody)
@@ -4492,9 +4476,7 @@ Covered nodes:
 #### EnumMember
 
 A cover of Flow enum members.
-```js title="JavaScript"
-t.isEnumMember(node);
-```
+<Code language="javascript">t.isEnumMember(node);</Code>
 
 Covered nodes:
 - [`EnumBooleanMember`](#enumbooleanmember)
@@ -4505,9 +4487,7 @@ Covered nodes:
 #### ExportDeclaration
 
 A cover of any [ExportDeclaration](https://tc39.es/ecma262/#prod-ExportDeclaration)s.
-```js title="JavaScript"
-t.isExportDeclaration(node);
-```
+<Code language="javascript">t.isExportDeclaration(node);</Code>
 
 Covered nodes:
 - [`ExportAllDeclaration`](#exportalldeclaration)
@@ -4517,9 +4497,7 @@ Covered nodes:
 #### Expression
 
 A cover of any [Expression](https://tc39.es/ecma262/#sec-ecmascript-language-expressions)s.
-```js title="JavaScript"
-t.isExpression(node);
-```
+<Code language="javascript">t.isExpression(node);</Code>
 
 Covered nodes:
 - [`ArrayExpression`](#arrayexpression)
@@ -4578,9 +4556,7 @@ Covered nodes:
 #### ExpressionWrapper
 
 A wrapper of expression that does not have runtime semantics.
-```js title="JavaScript"
-t.isExpressionWrapper(node);
-```
+<Code language="javascript">t.isExpressionWrapper(node);</Code>
 
 Covered nodes:
 - [`ExpressionStatement`](#expressionstatement)
@@ -4590,9 +4566,7 @@ Covered nodes:
 #### Flow
 
 A cover of AST nodes defined for Flow.
-```js title="JavaScript"
-t.isFlow(node);
-```
+<Code language="javascript">t.isFlow(node);</Code>
 
 Covered nodes:
 - [`AnyTypeAnnotation`](#anytypeannotation)
@@ -4664,9 +4638,7 @@ Covered nodes:
 #### FlowBaseAnnotation
 
 A cover of primary Flow type annotations.
-```js title="JavaScript"
-t.isFlowBaseAnnotation(node);
-```
+<Code language="javascript">t.isFlowBaseAnnotation(node);</Code>
 
 Covered nodes:
 - [`AnyTypeAnnotation`](#anytypeannotation)
@@ -4683,9 +4655,7 @@ Covered nodes:
 #### FlowDeclaration
 
 A cover of Flow declarations.
-```js title="JavaScript"
-t.isFlowDeclaration(node);
-```
+<Code language="javascript">t.isFlowDeclaration(node);</Code>
 
 Covered nodes:
 - [`DeclareClass`](#declareclass)
@@ -4705,9 +4675,7 @@ Covered nodes:
 #### FlowPredicate
 
 A cover of Flow predicates.
-```js title="JavaScript"
-t.isFlowPredicate(node);
-```
+<Code language="javascript">t.isFlowPredicate(node);</Code>
 
 Covered nodes:
 - [`DeclaredPredicate`](#declaredpredicate)
@@ -4716,9 +4684,7 @@ Covered nodes:
 #### FlowType
 
 A cover of Flow type annotations.
-```js title="JavaScript"
-t.isFlowType(node);
-```
+<Code language="javascript">t.isFlowType(node);</Code>
 
 Covered nodes:
 - [`AnyTypeAnnotation`](#anytypeannotation)
@@ -4751,9 +4717,7 @@ Covered nodes:
 #### For
 
 A cover of [ForStatement](https://tc39.es/ecma262/#sec-for-statement)s and [ForXStatement](#forxstatement)s.
-```js title="JavaScript"
-t.isFor(node);
-```
+<Code language="javascript">t.isFor(node);</Code>
 
 Covered nodes:
 - [`ForInStatement`](#forinstatement)
@@ -4763,9 +4727,7 @@ Covered nodes:
 #### ForXStatement
 
 A cover of [ForInStatements and ForOfStatements](https://tc39.es/ecma262/#sec-for-in-and-for-of-statements).
-```js title="JavaScript"
-t.isForXStatement(node);
-```
+<Code language="javascript">t.isForXStatement(node);</Code>
 
 Covered nodes:
 - [`ForInStatement`](#forinstatement)
@@ -4774,9 +4736,7 @@ Covered nodes:
 #### Function
 
 A cover of functions and [method](#method)s, the must have `body` and `params`. Note: `Function` is different to `FunctionParent`. For example, a `StaticBlock` is a `FunctionParent` but not `Function`.
-```js title="JavaScript"
-t.isFunction(node);
-```
+<Code language="javascript">t.isFunction(node);</Code>
 
 Covered nodes:
 - [`ArrowFunctionExpression`](#arrowfunctionexpression)
@@ -4789,9 +4749,7 @@ Covered nodes:
 #### FunctionParent
 
 A cover of AST nodes that start an execution context with new [VariableEnvironment](https://tc39.es/ecma262/#table-additional-state-components-for-ecmascript-code-execution-contexts). In other words, they define the scope of `var` declarations. FunctionParent did not include `Program` since Babel 7.
-```js title="JavaScript"
-t.isFunctionParent(node);
-```
+<Code language="javascript">t.isFunctionParent(node);</Code>
 
 Covered nodes:
 - [`ArrowFunctionExpression`](#arrowfunctionexpression)
@@ -4806,9 +4764,7 @@ Covered nodes:
 #### Immutable
 
 A cover of immutable objects and JSX elements. An object is [immutable](https://tc39.es/ecma262/#immutable-prototype-exotic-object) if no other properties can be defined once created.
-```js title="JavaScript"
-t.isImmutable(node);
-```
+<Code language="javascript">t.isImmutable(node);</Code>
 
 Covered nodes:
 - [`BigIntLiteral`](#bigintliteral)
@@ -4839,9 +4795,7 @@ Covered nodes:
 </details>
 
 A cover of ImportDeclaration and [ExportDeclaration](#exportdeclaration).
-```js title="JavaScript"
-t.isImportOrExportDeclaration(node);
-```
+<Code language="javascript">t.isImportOrExportDeclaration(node);</Code>
 
 Covered nodes:
 - [`ExportAllDeclaration`](#exportalldeclaration)
@@ -4852,9 +4806,7 @@ Covered nodes:
 #### JSX
 
 A cover of AST nodes defined for [JSX](https://facebook.github.io/jsx/).
-```js title="JavaScript"
-t.isJSX(node);
-```
+<Code language="javascript">t.isJSX(node);</Code>
 
 Covered nodes:
 - [`JSXAttribute`](#jsxattribute)
@@ -4876,9 +4828,7 @@ Covered nodes:
 #### LVal
 
 A cover of left hand side expressions used in the `left` of assignment expressions and [ForXStatement](#forxstatement)s.
-```js title="JavaScript"
-t.isLVal(node);
-```
+<Code language="javascript">t.isLVal(node);</Code>
 
 Covered nodes:
 - [`ArrayPattern`](#arraypattern)
@@ -4896,9 +4846,7 @@ Covered nodes:
 #### Literal
 
 A cover of [Literal](https://tc39.es/ecma262/#sec-primary-expression-literals)s, [Regular Expression Literal](https://tc39.es/ecma262/#sec-primary-expression-regular-expression-literals)s and [Template Literal](https://tc39.es/ecma262/#sec-template-literals)s.
-```js title="JavaScript"
-t.isLiteral(node);
-```
+<Code language="javascript">t.isLiteral(node);</Code>
 
 Covered nodes:
 - [`BigIntLiteral`](#bigintliteral)
@@ -4913,9 +4861,7 @@ Covered nodes:
 #### Loop
 
 A cover of loop statements.
-```js title="JavaScript"
-t.isLoop(node);
-```
+<Code language="javascript">t.isLoop(node);</Code>
 
 Covered nodes:
 - [`DoWhileStatement`](#dowhilestatement)
@@ -4927,9 +4873,7 @@ Covered nodes:
 #### Method
 
 A cover of object methods and class methods.
-```js title="JavaScript"
-t.isMethod(node);
-```
+<Code language="javascript">t.isMethod(node);</Code>
 
 Covered nodes:
 - [`ClassMethod`](#classmethod)
@@ -4939,9 +4883,7 @@ Covered nodes:
 #### Miscellaneous
 
 A cover of non-standard AST types that are sometimes useful for development.
-```js title="JavaScript"
-t.isMiscellaneous(node);
-```
+<Code language="javascript">t.isMiscellaneous(node);</Code>
 
 Covered nodes:
 - [`Noop`](#noop)
@@ -4963,9 +4905,7 @@ Covered nodes:
 Deprecated, use [`ImportOrExportDeclaration`](#importorexportdeclaration) instead. Check out [PR #15266](https://github.com/babel/babel/pull/15266#issue-1492649843) for migration notes.
 
 :::
-```js title="JavaScript"
-t.isModuleDeclaration(node);
-```
+<Code language="javascript">t.isModuleDeclaration(node);</Code>
 
 Covered nodes:
 - [`ExportAllDeclaration`](#exportalldeclaration)
@@ -4976,9 +4916,7 @@ Covered nodes:
 #### ModuleSpecifier
 
 A cover of import and export specifiers. Note: It is _not_ the [ModuleSpecifier](https://tc39.es/ecma262/#prod-ModuleSpecifier) defined in the spec.
-```js title="JavaScript"
-t.isModuleSpecifier(node);
-```
+<Code language="javascript">t.isModuleSpecifier(node);</Code>
 
 Covered nodes:
 - [`ExportDefaultSpecifier`](#exportdefaultspecifier)
@@ -4991,9 +4929,7 @@ Covered nodes:
 #### ObjectMember
 
 A cover of [members](https://tc39.es/ecma262/#prod-PropertyDefinitionList) in an object literal.
-```js title="JavaScript"
-t.isObjectMember(node);
-```
+<Code language="javascript">t.isObjectMember(node);</Code>
 
 Covered nodes:
 - [`ObjectMethod`](#objectmethod)
@@ -5002,9 +4938,7 @@ Covered nodes:
 #### Pattern
 
 A cover of [BindingPattern](https://tc39.es/ecma262/#prod-BindingPattern) except Identifiers.
-```js title="JavaScript"
-t.isPattern(node);
-```
+<Code language="javascript">t.isPattern(node);</Code>
 
 Covered nodes:
 - [`ArrayPattern`](#arraypattern)
@@ -5014,9 +4948,7 @@ Covered nodes:
 #### PatternLike
 
 A cover of [BindingPattern](https://tc39.es/ecma262/#prod-BindingPattern)s.
-```js title="JavaScript"
-t.isPatternLike(node);
-```
+<Code language="javascript">t.isPatternLike(node);</Code>
 
 Covered nodes:
 - [`ArrayPattern`](#arraypattern)
@@ -5032,9 +4964,7 @@ Covered nodes:
 #### Private
 
 A cover of private class elements and private identifiers.
-```js title="JavaScript"
-t.isPrivate(node);
-```
+<Code language="javascript">t.isPrivate(node);</Code>
 
 Covered nodes:
 - [`ClassPrivateMethod`](#classprivatemethod)
@@ -5044,9 +4974,7 @@ Covered nodes:
 #### Property
 
 A cover of object properties and class properties.
-```js title="JavaScript"
-t.isProperty(node);
-```
+<Code language="javascript">t.isProperty(node);</Code>
 
 Covered nodes:
 - [`ClassAccessorProperty`](#classaccessorproperty)
@@ -5057,9 +4985,7 @@ Covered nodes:
 #### Pureish
 
 A cover of AST nodes which do not have side-effects. In other words, there is no observable behaviour changes if they are evaluated more than once.
-```js title="JavaScript"
-t.isPureish(node);
-```
+<Code language="javascript">t.isPureish(node);</Code>
 
 Covered nodes:
 - [`ArrowFunctionExpression`](#arrowfunctionexpression)
@@ -5076,9 +5002,7 @@ Covered nodes:
 #### Scopable
 
 A cover of [FunctionParent](#functionparent) and [BlockParent](#blockparent).
-```js title="JavaScript"
-t.isScopable(node);
-```
+<Code language="javascript">t.isScopable(node);</Code>
 
 Covered nodes:
 - [`ArrowFunctionExpression`](#arrowfunctionexpression)
@@ -5104,9 +5028,7 @@ Covered nodes:
 #### Standardized
 
 A cover of AST nodes which are part of an official ECMAScript specification.
-```js title="JavaScript"
-t.isStandardized(node);
-```
+<Code language="javascript">t.isStandardized(node);</Code>
 
 Covered nodes:
 - [`ArrayExpression`](#arrayexpression)
@@ -5201,9 +5123,7 @@ Covered nodes:
 #### Statement
 
 A cover of any [Statement](https://tc39.es/ecma262/#prod-Statement)s.
-```js title="JavaScript"
-t.isStatement(node);
-```
+<Code language="javascript">t.isStatement(node);</Code>
 
 Covered nodes:
 - [`BlockStatement`](#blockstatement)
@@ -5257,9 +5177,7 @@ Covered nodes:
 #### TSBaseType
 
 A cover of primary TypeScript type annotations.
-```js title="JavaScript"
-t.isTSBaseType(node);
-```
+<Code language="javascript">t.isTSBaseType(node);</Code>
 
 Covered nodes:
 - [`TSAnyKeyword`](#tsanykeyword)
@@ -5281,9 +5199,7 @@ Covered nodes:
 #### TSEntityName
 
 A cover of ts entities.
-```js title="JavaScript"
-t.isTSEntityName(node);
-```
+<Code language="javascript">t.isTSEntityName(node);</Code>
 
 Covered nodes:
 - [`Identifier`](#identifier)
@@ -5292,9 +5208,7 @@ Covered nodes:
 #### TSType
 
 A cover of TypeScript type annotations.
-```js title="JavaScript"
-t.isTSType(node);
-```
+<Code language="javascript">t.isTSType(node);</Code>
 
 Covered nodes:
 - [`TSAnyKeyword`](#tsanykeyword)
@@ -5336,9 +5250,7 @@ Covered nodes:
 #### TSTypeElement
 
 A cover of TypeScript type declarations.
-```js title="JavaScript"
-t.isTSTypeElement(node);
-```
+<Code language="javascript">t.isTSTypeElement(node);</Code>
 
 Covered nodes:
 - [`TSCallSignatureDeclaration`](#tscallsignaturedeclaration)
@@ -5350,9 +5262,7 @@ Covered nodes:
 #### Terminatorless
 
 A cover of AST nodes whose semantic will change when a line terminator is inserted between the operator and the operand.
-```js title="JavaScript"
-t.isTerminatorless(node);
-```
+<Code language="javascript">t.isTerminatorless(node);</Code>
 
 Covered nodes:
 - [`AwaitExpression`](#awaitexpression)
@@ -5365,9 +5275,7 @@ Covered nodes:
 #### TypeScript
 
 A cover of AST nodes defined for TypeScript.
-```js title="JavaScript"
-t.isTypeScript(node);
-```
+<Code language="javascript">t.isTypeScript(node);</Code>
 
 Covered nodes:
 - [`TSAnyKeyword`](#tsanykeyword)
@@ -5439,9 +5347,7 @@ Covered nodes:
 #### UnaryLike
 
 A cover of UnaryExpression and SpreadElement.
-```js title="JavaScript"
-t.isUnaryLike(node);
-```
+<Code language="javascript">t.isUnaryLike(node);</Code>
 
 Covered nodes:
 - [`SpreadElement`](#spreadelement)
@@ -5450,9 +5356,7 @@ Covered nodes:
 #### UserWhitespacable
 
 Deprecated. Will be removed in Babel 8.
-```js title="JavaScript"
-t.isUserWhitespacable(node);
-```
+<Code language="javascript">t.isUserWhitespacable(node);</Code>
 
 Covered nodes:
 - [`ObjectMethod`](#objectmethod)
@@ -5466,10 +5370,10 @@ Covered nodes:
 #### While
 
 A cover of DoWhileStatement and WhileStatement, which share the same AST shape.
-```js title="JavaScript"
-t.isWhile(node);
-```
+<Code language="javascript">t.isWhile(node);</Code>
 
 Covered nodes:
 - [`DoWhileStatement`](#dowhilestatement)
 - [`WhileStatement`](#whilestatement)
+
+</Main>

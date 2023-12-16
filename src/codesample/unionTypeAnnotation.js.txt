@@ -1,0 +1,5 @@
+// Flow
+
+function eatSomething(food: <mark>'sushi' | 'ramen'</mark>) {
+	// ...
+}

@@ -1,28 +1,59 @@
+import Image from "next/image";
+import Link from "next/link";
 import type { FC, PropsWithChildren } from "react";
+import githubIcon from "@/components/github-142-svgrepo-com.svg";
+import babelIcon from "@/components/babel-svgrepo-com.svg";
+import babel2Icon from "@/components/babel2-svgrepo-com.svg";
+import treeIcon from "@/components/tree-structure-svgrepo-com.svg";
+
+const ICON_SIZE = 30;
 
 export const Sidebar: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <nav className="sidebar">
-      <style>{`
-      nav.sidebar{
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        max-height: 100vh;
-        overflow-y: scroll;
-      }
-      nav.sidebar ul li{
-        display: block;
-        padding: 0.3rem 0.3rem 0.3rem 1rem;
-      }
-      `}</style>
+    <aside className="sidebar flex flex-col top-0 sticky overflow-y-auto max-h-screen min-w-max px-3">
       <header>
-        <h3>@babel/types by example</h3>
+        <h3>
+          <a href="/" className="text-black">
+            @babel/types by example
+          </a>
+        </h3>
       </header>
-      {children}
-    </nav>
+      <nav>{children}</nav>
+      <footer className="text-center mt-5 mb-10">
+        <p>
+          <a
+            href="https://github.com/Scipion/babel-types-by-example"
+            className="text-orange-500"
+          >
+            @babel/types by example
+          </a>
+        </p>
+        <div className="flex justify-center space-x-4">
+          <Link
+            href={"https://github.com/Scipion/babel-types-by-example"}
+            target="_blank"
+          >
+            <Image
+              src={githubIcon}
+              height={ICON_SIZE}
+              alt="Babel types by example repository"
+            />
+          </Link>
+          <Link href={"https://babeljs.io/docs/babel-types"} target="_blank">
+            <Image
+              src={babel2Icon}
+              height={ICON_SIZE}
+              alt="Official Babel JS Documentation"
+            />
+          </Link>
+          <Link href={"https://astexplorer.net/"} target="_blank">
+            <Image src={treeIcon} height={ICON_SIZE} alt="AST Explorer" />
+          </Link>
+          <Link href={"https://babeljs.io/repl"} target="_blank">
+            <Image src={babelIcon} height={ICON_SIZE} alt="Babel REPL" />
+          </Link>
+        </div>
+      </footer>
+    </aside>
   );
 };
-
-//const NavSidebar = style

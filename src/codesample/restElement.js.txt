@@ -1,0 +1,10 @@
+function sum(<mark>...theArgs</mark>) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+sum(1, 2, 3);
+// Output: 6

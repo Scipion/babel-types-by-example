@@ -1,0 +1,3 @@
+function calc(<mark>x = 1000</mark>, <mark>y=50</mark>, z){
+  // ..
+}

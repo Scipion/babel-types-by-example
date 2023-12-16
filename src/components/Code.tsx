@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactElement } from "react";
+import { FC, PropsWithChildren } from "react";
 import { readFileSync } from "fs";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -49,10 +49,7 @@ export const Code: FC<
   }
 
   return (
-    <pre
-      className={`language-${language} p-4 mt-2 mb-2 rounded-md relative`}
-      style={{ background: "#1a1b26", color: "#9aa5ce" }}
-    >
+    <pre className={`code-content p-4 mt-2 mb-2 rounded-md relative`}>
       <code
         dangerouslySetInnerHTML={{
           __html: highlightedCode,

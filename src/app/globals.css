@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --link-color: #3273dc;
+  --code-background-color: #f5f5f5;
+  --code-text-color: #f14668;
+  --highlighted-background-color: #f5f5f5;
+  --border-color: #dbdbdb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +21,121 @@
   }
 }
 
+html {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
 body {
+  margin: 0;
+  padding: 0;
+  border: 0;
   color: rgb(var(--foreground-rgb));
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+a,
+a code,
+a .code {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* code mark > * {
+  color: #9aa5ce;
+} */
+
+/* code, */
+pre.code-content,
+pre.code-content code {
+  background: #323330;
+  color: #9aa5ce;
+  color: #f5aa9a;
+}
+
+/* ¿ this */
+mark {
+  background-color: rgba(255, 255, 0, 0.3);
+}
+/* or this? */
+mark {
+  background-color: transparent;
+  outline: 1px solid yellow;
+  color: #f5d1f2;
+}
+mark:hover {
+  background-color: yellow;
+  color: #080916;
+}
+
+code,
+.code,
+kbd,
+pre,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    monospace;
+  font-size: 1em;
+}
+
+code,
+.code {
+  color: var(--code-text-color);
+  background-color: var(--code-background-color);
+}
+
+code,
+.code {
+  padding: 0.25rem;
+}
+
+pre code {
+  background-color: inherit;
+}
+
+pre code {
+  padding: unset;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+/* h3 {
+  counter-reset: h4;
+}
+
+h4 {
+  counter-increment: h4;
+  display: list-item;
+  margin-left: 50px;
+}
+
+h4::marker {
+  display: list-item;
+  content: "#" counter(h4) " ";
+} */
+
+pre {
+  background-color: var(--highlighted-background-color);
+}
+
+blockquote {
+  background-color: var(--highlighted-background-color);
+  border-left: 0.5rem solid var(--border-color);
+}
+
+pre,
+blockquote {
+  padding: 1rem 2rem;
+  margin-right: 0;
+  margin-left: 0;
 }

@@ -1,0 +1,8 @@
+let i = 0;
+
+<mark>myLoop: while(true){
+  i++;
+  if (i>5) {
+	break myLoop;
+  }
+}</mark>

@@ -1,0 +1,10 @@
+// 'with' statement throws an error in strict mode
+// so babel-parser config must include "sourceType": "script"
+// for it to work
+function foo() {
+  const obj={a:{b:10}}
+  <mark>with(obj.a){
+    b=11
+  }</mark>
+  return obj;
+}

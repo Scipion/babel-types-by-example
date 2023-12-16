@@ -1,0 +1,5 @@
+// Typescript
+
+function eatSomething(food: <mark>'sushi' | 'ramen'</mark>) {
+	// ...
+}

@@ -1,0 +1,3 @@
+// Flow
+
+let str: <mark>'abc'</mark> = 'abc';

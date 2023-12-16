@@ -1,0 +1,7 @@
+const num = <mark>2 ** 3</mark>;
+
+function add10(x){
+    return <mark>x + 10</mark>;
+}
+
+let str = <mark>'a' + 'b'</mark>;

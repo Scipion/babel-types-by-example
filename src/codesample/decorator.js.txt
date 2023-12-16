@@ -1,0 +1,10 @@
+<mark>@ClassLogger()</mark>
+class X {
+  
+  <mark>@PropertyLogger</mark>
+  prop=1
+  
+  <mark>@MethodLogger</mark>
+  method() {
+  }
+}

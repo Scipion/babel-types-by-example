@@ -1,0 +1,7 @@
+<mark>try {
+	const foo = bar();
+} catch (err) {
+	console.err('Oops');
+} finally{
+    console.log('end');
+}</mark>

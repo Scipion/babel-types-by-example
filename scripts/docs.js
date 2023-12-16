@@ -185,7 +185,7 @@ function printNodeFields(key, readme) {
         } else if (validator) {
           try {
             fieldDescription.push(
-              ": `" + stringifyValidator(validator, "") + "`"
+              ": " + stringifyValidator(validator, "") + ""
             );
           } catch (ex) {
             if (ex.code === "UNEXPECTED_VALIDATOR_TYPE") {
@@ -269,10 +269,12 @@ Object.keys(t.BUILDER_KEYS)
 contentTable.push("");
 readme.unshift(
   'import { Sidebar } from "@/components/Sidebar";',
+  'import { Main } from "@/components/Main";',
   "",
   "<Sidebar>",
   ...contentTable,
-  "</Sidebar>"
+  "</Sidebar>",
+  "<Main>"
 );
 
 function generateMapAliasToNodeTypes() {
@@ -324,9 +326,9 @@ for (const alias of [...mapAliasToNodeTypes.keys()].sort()) {
   printAPIHistory(alias, readme);
   readme.push("");
   readme.push(aliasDescriptions[alias]);
-  readme.push('```js title="JavaScript"');
-  readme.push("t.is" + alias + "(node);");
-  readme.push("```");
+  readme.push(
+    `<Code language="javascript">${"t.is" + alias + "(node);"}</Code>`
+  );
   readme.push("");
   readme.push("Covered nodes:");
   for (const nodeType of nodeTypes) {
@@ -334,5 +336,7 @@ for (const alias of [...mapAliasToNodeTypes.keys()].sort()) {
   }
   readme.push("");
 }
+
+readme.push("</Main>");
 
 process.stdout.write(readme.join("\n"));

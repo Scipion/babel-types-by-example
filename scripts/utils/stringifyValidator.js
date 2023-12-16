@@ -4,7 +4,11 @@ export default function stringifyValidator(validator, nodePrefix) {
   }
 
   if (validator.each) {
-    return `Array<${stringifyValidator(validator.each, nodePrefix)}>`;
+    return (
+      '<span className="code">' +
+      `Array\\<${stringifyValidator(validator.each, nodePrefix)}\\>` +
+      "</span>"
+    );
   }
 
   if (validator.chainOf) {
@@ -15,17 +19,23 @@ export default function stringifyValidator(validator, nodePrefix) {
   }
 
   if (validator.oneOf) {
-    return validator.oneOf.map(JSON.stringify).join(" | ");
+    return "`" + validator.oneOf.map(JSON.stringify).join(" | ") + "`";
   }
 
   if (validator.oneOfNodeTypes) {
-    return validator.oneOfNodeTypes.map((_) => +nodePrefix + _).join(" | ");
+    return (
+      '<span className="code">' +
+      validator.oneOfNodeTypes
+        .map((_) => generateLink(nodePrefix + _))
+        .join(" | ") +
+      "</span>"
+    );
   }
 
   if (validator.oneOfNodeOrValueTypes) {
     return validator.oneOfNodeOrValueTypes
       .map((_) => {
-        return isValueType(_) ? _ : nodePrefix + _;
+        return isValueType(_) ? _ : generateLink(nodePrefix + _);
       })
       .join(" | ");
   }
@@ -36,7 +46,7 @@ export default function stringifyValidator(validator, nodePrefix) {
 
   if (validator.shapeOf) {
     return (
-      "{ " +
+      "`{ " +
       Object.keys(validator.shapeOf)
         .map((shapeKey) => {
           const propertyDefinition = validator.shapeOf[shapeKey];
@@ -53,7 +63,7 @@ export default function stringifyValidator(validator, nodePrefix) {
         })
         .filter(Boolean)
         .join(", ") +
-      " }"
+      " }`"
     );
   }
 
@@ -66,4 +76,8 @@ export default function stringifyValidator(validator, nodePrefix) {
  */
 export function isValueType(type) {
   return type.charAt(0).toLowerCase() === type.charAt(0);
+}
+
+function generateLink(type) {
+  return `[${type}](#${type.toLowerCase()})`;
 }

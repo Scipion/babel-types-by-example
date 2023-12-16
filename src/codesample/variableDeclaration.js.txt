@@ -4,6 +4,10 @@
 
 <mark>var foo='lorem ipsum dolor sit amet';</mark>
 
+// Flow/Typescript
 <mark>let empty:boolean;</mark>
 
-<mark>var a, b=2, c, d;</mark>
+<mark>var a,
+    b=2,
+    c="query",
+    d;</mark>
