@@ -1,0 +1,3 @@
+// Program is a top level node contained only by File,
+// its "sourceType" field values can be `module` or `script`
+// and "body" field contains all the expressions and declarations in global scope.

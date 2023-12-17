@@ -61,11 +61,6 @@ pre.code-content code {
   color: #f5aa9a;
 }
 
-/* ¿ this */
-mark {
-  background-color: rgba(255, 255, 0, 0.3);
-}
-/* or this? */
 mark {
   background-color: transparent;
   outline: 1px solid yellow;
@@ -74,6 +69,35 @@ mark {
 mark:hover {
   background-color: yellow;
   color: #080916;
+}
+
+/* mark nesting level 2 */
+mark mark {
+  outline: 1px solid rgb(255, 208, 0);
+}
+
+mark mark:hover {
+  background-color: rgb(255, 208, 0);
+  color: #080916;
+}
+
+mark:has(mark:hover) {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* mark nesting level 3 */
+mark mark mark {
+  outline: 1px solid rgb(255, 136, 0);
+}
+
+mark mark mark:hover {
+  background-color: rgb(255, 136, 0);
+  color: #080916;
+}
+mark:has(mark:has(mark:hover)) {
+  background-color: transparent;
+  color: inherit;
 }
 
 code,

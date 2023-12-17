@@ -1,0 +1,2 @@
+import 'data:text/javascript,console.log("hello!");';
+import _ from 'data:application/json,"world!"' with { <mark>type: 'json'</mark> }; 

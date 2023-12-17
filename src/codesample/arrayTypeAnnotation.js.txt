@@ -1,0 +1,13 @@
+let elems: <mark>number[]</mark> = [2, 3, 4];
+
+function foo(x: <mark>string[]</mark>){
+	// ...
+}
+
+type Elem<T> = {x:T};
+
+function calc(x: <mark>Elem<string>[]</mark>){
+	// ...
+}
+
+let nums: <mark><mark>number[]</mark>[]</mark> = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]; 

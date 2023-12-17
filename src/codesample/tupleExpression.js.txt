@@ -1,0 +1,20 @@
+const drivingLicence = #{
+    country: "UK",
+    number: 123456789870,
+};
+
+const creditCard = #{
+    type: "Amex",
+    number: 378282246310005,
+};
+
+const debitCard = #{
+    type: "Visa",
+    number: 4242424242424242,
+};
+
+const wallet = <mark>#[
+    drivingLicence,
+    creditCard,
+    debitCard,
+]</mark>;

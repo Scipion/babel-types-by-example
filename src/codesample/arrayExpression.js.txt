@@ -1,0 +1,16 @@
+let listOfNumbers = <mark>[2, 3, 5, 7, 11]</mark>;
+
+let day1 = {
+  squirrel: false,
+  events: <mark>["work", "touched tree", "pizza", "running"]</mark>
+};
+
+const coord = <mark>[
+  <mark>[0, 0]</mark>,
+  <mark>[76, 9]</mark>,
+  <mark>[4, 1]</mark>
+]</mark>;
+
+var nested = <mark>[<mark>[<mark>[]</mark>]</mark>]</mark>;
+
+const [a, b] = <mark>[10, 20]</mark>;

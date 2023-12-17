@@ -1,0 +1,9 @@
+const <mark>[a, b]</mark> = [10, 20];
+
+function calc(<mark>[isError, data]</mark>){
+  // ...
+}
+
+let <mark>[info, ,...rest]</mark> = calculate();
+
+var <mark>[x, <mark>[y, z]</mark>]</mark> = calculate();

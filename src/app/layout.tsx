@@ -51,8 +51,8 @@ export default function RootLayout({
             <Link href={"https://astexplorer.net/"} target="_blank">
               <Image src={treeIcon} height={ICON_SIZE} alt="AST Explorer" />
             </Link>
-            <Link href={"https://babeljs.io/repl"} target="_blank">
-              <Image src={babelIcon} height={ICON_SIZE} alt="Babel REPL" />
+            <Link href={"https://github.com/babel/babel/blob/main/packages/babel-parser/ast/spec.md"} target="_blank">
+              <Image src={babelIcon} height={ICON_SIZE} alt="Babel Parser spec" />
             </Link>
           </div>
           <p className="text-sm">

@@ -1,0 +1,14 @@
+if(<mark>true</mark>) {
+	console.log("Yes");
+}
+
+let nop = <mark>false</mark>;
+
+let i=0;
+
+while(<mark>true</mark>) {
+  i++;
+  if(i>10){
+    break;
+  }
+}
