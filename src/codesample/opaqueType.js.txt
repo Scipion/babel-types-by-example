@@ -1,0 +1,11 @@
+<mark>opaque type ID = string;</mark>
+
+function identity(x: ID): ID {
+  return x;
+}
+export type {ID};
+
+<mark>opaque type ObjectAlias = {
+  property: string,
+  method(): number,
+};</mark>

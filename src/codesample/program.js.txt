@@ -1,3 +1,11 @@
 // Program is a top level node contained only by File,
 // its "sourceType" field values can be `module` or `script`
 // and "body" field contains all the expressions and declarations in global scope.
+
+// Program is also the body content of a module declaration
+module {
+  <mark>const a="A";
+  let b=0;
+  
+  export default {a, b};</mark>
+}

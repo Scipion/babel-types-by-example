@@ -1,0 +1,9 @@
+const info = new URL(<mark>import.meta</mark>.url).searchParams.get("someURLInfo");
+
+//
+
+function Foo() {
+  if (!<mark>new.target</mark>) {
+    throw new TypeError('calling Foo constructor without new is invalid');
+  }
+}

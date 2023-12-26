@@ -1,0 +1,22 @@
+let x = <mark>do {
+  let tmp = f();
+  tmp * tmp + 1
+}</mark>;
+
+
+const Nav = () => {
+  return (
+    <nav>
+      <Home />
+      {
+        <mark>do {
+          if (loggedIn) {
+            <LogoutButton />
+          } else {
+            <LoginButton />
+          }
+        }</mark>
+      }
+    </nav>
+  );
+}

@@ -82,8 +82,8 @@ mark mark:hover {
 }
 
 mark:has(mark:hover) {
-  background-color: transparent;
-  color: inherit;
+  background-color: transparent !important;
+  color: inherit !important;
 }
 
 /* mark nesting level 3 */
@@ -95,9 +95,15 @@ mark mark mark:hover {
   background-color: rgb(255, 136, 0);
   color: #080916;
 }
-mark:has(mark:has(mark:hover)) {
-  background-color: transparent;
-  color: inherit;
+
+/* mark nesting level 4 */
+mark mark mark mark {
+  outline: 1px solid rgb(255, 72, 0);
+}
+
+mark mark mark mark:hover {
+  background-color: rgb(255, 72, 0);
+  color: #080916;
 }
 
 code,

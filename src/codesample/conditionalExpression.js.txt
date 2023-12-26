@@ -1,0 +1,5 @@
+function getFee(isMember) {
+  return <mark>isMember ? '$2.00' : '$10.00'</mark>;
+}
+
+console.log(getFee(true));

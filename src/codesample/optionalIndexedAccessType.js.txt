@@ -1,0 +1,14 @@
+type T = <mark>Obj?.['prop']</mark>;
+
+type TasksContent = ?{
+  tasks?: Array<{
+    items?: {
+      metadata?: {
+        title: string,
+        completed: boolean,
+      },
+    },
+  }>,
+};
+
+type TaskData = <mark><mark><mark><mark>TasksContent?.['tasks']</mark>?.[number]</mark>?.['items']</mark>?.['metadata']</mark>;

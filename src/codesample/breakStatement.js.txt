@@ -1,0 +1,27 @@
+const expr = 'Papayas';
+switch (expr) {
+  case 'Oranges':
+    console.log('Oranges are $0.59 a pound.');
+    <mark>break;</mark>
+  case 'Mangoes':
+  case 'Papayas':
+    console.log('Mangoes and papayas are $2.79 a pound.');
+    // Expected output: "Mangoes and papayas are $2.79 a pound."
+    <mark>break;<mark>
+  default:
+    console.log(`Sorry, we are out of ${expr}.`);
+}
+
+// 
+
+let i=0, j=10;
+
+topLoop: while(true){
+    i+=2;
+    while(true) {
+        j+=1
+        if(i>j){
+        	<mark>break topLoop;</mark>
+        }
+    }
+}
