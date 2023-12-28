@@ -1,0 +1,17 @@
+const array1 = ['a', 'b', 'c'];
+
+<mark>for (const element of array1) {
+  console.log(element);
+}</mark>
+
+//
+
+async function* foo() {
+  yield 1;
+  yield 2;
+}
+
+<mark>for await (const num of foo()) {
+  console.log(num);
+}</mark>
+

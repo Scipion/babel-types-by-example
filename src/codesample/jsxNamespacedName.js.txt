@@ -1,0 +1,20 @@
+declare namespace JSX {
+  interface IntrinsicElements {
+    'a:b': any;
+  }
+}
+
+<<mark>a:b</mark>>
+    Text
+<\/<mark>a:b</mark>>;
+
+//...
+
+<div <mark>foo:bar="1"</mark>>
+  Element
+</div>
+
+//...
+
+const x = <Foo <mark>x:y</mark>="hello" />;
+const y = <Foo <mark>x : y</mark>="hello" />;

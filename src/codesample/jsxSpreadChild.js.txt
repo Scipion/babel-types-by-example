@@ -1,0 +1,5 @@
+const Button = ({elements, ...params}) => {
+  return <button >
+    <mark>{...elements}</mark>
+  </button>;
+};

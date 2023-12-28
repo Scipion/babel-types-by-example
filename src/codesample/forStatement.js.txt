@@ -1,0 +1,4 @@
+let i = 0;
+<mark>for (; i < 9; i++) {
+  console.log(i);
+}</mark>

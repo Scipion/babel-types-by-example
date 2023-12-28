@@ -1,0 +1,12 @@
+<mark>(function foo() {
+  <mark>console.log("foo");</mark>
+})();</mark>
+
+
+let x = [1, 2, 3];
+<mark>x[0] = 4;</mark>
+
+const y = {
+  foo: 1,
+  bar: 2,
+};

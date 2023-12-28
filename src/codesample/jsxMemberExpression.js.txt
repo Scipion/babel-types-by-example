@@ -1,0 +1,13 @@
+const TableData = () => {
+  return (
+    <<mark>Style.Table</mark>>
+      <td>John Doe</td>
+      <td>36</td>
+      <td>Developer</td>;
+    <\/<mark>Style.Table</mark>>
+  );
+}
+
+const Spread = () => <<mark>React.Fragment</mark>>
+	...
+</<mark>React.Fragment</mark>>;

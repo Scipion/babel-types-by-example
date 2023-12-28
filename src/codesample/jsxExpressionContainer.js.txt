@@ -1,0 +1,1 @@
+<MyComponent foo=<mark>{1 + 2 + 3 + 4}</mark> \/>

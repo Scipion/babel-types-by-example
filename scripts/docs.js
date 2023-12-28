@@ -1,11 +1,15 @@
 import util from "util";
+import fs from "fs/promises";
 import stringifyValidator from "./utils/stringifyValidator.js";
 import toFunctionName from "./utils/toFunctionName.js";
 
 import * as t from "@babel/types";
 
 const readme = [
+  'import { Main } from "@/components/Main";',
   `import { Code } from "@/components/Code";`,
+  "",
+  "<Main>",
   "",
   `# @babel/types by example 
 
@@ -267,15 +271,6 @@ Object.keys(t.BUILDER_KEYS)
     readme.push("");
   });
 contentTable.push("");
-readme.unshift(
-  'import { Sidebar } from "@/components/Sidebar";',
-  'import { Main } from "@/components/Main";',
-  "",
-  "<Sidebar>",
-  ...contentTable,
-  "</Sidebar>",
-  "<Main>"
-);
 
 function generateMapAliasToNodeTypes() {
   const result = new Map();
@@ -339,4 +334,15 @@ for (const alias of [...mapAliasToNodeTypes.keys()].sort()) {
 
 readme.push("</Main>");
 
-process.stdout.write(readme.join("\n"));
+//process.stdout.write(readme.join("\n"));
+
+const menu = [
+  'import { Sidebar } from "@/components/Sidebar";',
+  "",
+  "<Sidebar>",
+  ...contentTable,
+  "</Sidebar>",
+].join("\n");
+
+await fs.writeFile("./src/app/Menu.mdx", menu);
+await fs.writeFile("./src/app/page.mdx", readme.join("\n"));

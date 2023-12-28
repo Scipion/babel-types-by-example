@@ -25,7 +25,8 @@ function hl(code: string, lang: string): string {
 
   value = value
     .replaceAll("&lt;mark&gt;", "<mark>")
-    .replaceAll("&lt;/mark&gt;", "</mark>");
+    .replaceAll("&lt;/mark&gt;", "</mark>")
+    .replaceAll("\\/", "/");
 
   return value;
 }

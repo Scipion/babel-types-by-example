@@ -1,0 +1,5 @@
+const Button = () => {
+  return <button <mark>size="sm"</mark> <mark>textColor="white"</mark> <mark>bgColor="blue-500"</mark>>
+    Enable
+  </button>;
+};

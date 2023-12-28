@@ -1,0 +1,9 @@
+const TableData = () => {
+  return (
+    <>
+      <td>John Doe</td>
+      <td>36</td>
+      <td>Developer</td>;
+    <mark><\/></mark>
+  );
+}

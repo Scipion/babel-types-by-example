@@ -1,0 +1,5 @@
+const re1 = <mark>/^ab+c$/gi</mark>; // literal notation
+
+const re2 = new RegExp("ab+c", "i"); // constructor with string pattern as first argument
+
+const re3 = new RegExp(<mark>/ab+c/</mark>, "i"); // constructor with regular expression literal as first argument

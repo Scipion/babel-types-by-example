@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "docs": "bun ./scripts/docs.js > ./src/app/page.mdx",
+    "docs": "bun ./scripts/docs.js",
+    "xdocs": "bun ./scripts/docs.js > ./src/app/page.mdx",
     "missing": "bun ./scripts/missing.js"
   },
   "dependencies": {

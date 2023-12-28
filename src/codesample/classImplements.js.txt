@@ -1,0 +1,13 @@
+interface Serializable {
+  serialize(): string;
+}
+
+class Element implements <mark>Serializable</mark> {
+  serialize(): string { return '[Element]'; }
+}
+
+class Foo implements
+  <mark>Bar</mark>,
+  <mark>Baz</mark> {
+  // ...
+}
