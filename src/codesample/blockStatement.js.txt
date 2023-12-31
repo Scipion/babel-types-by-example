@@ -1,0 +1,15 @@
+let x = 1;
+<mark>{
+  let x = 2;
+}</mark>
+console.log(x); // 1
+
+function foo(log) <mark>{
+  if(log) <mark>{
+    console.log("foo");
+  }</mark>
+}</mark>
+
+for (let i = 0; i < 10; i++) <mark>{
+  console.log(i);
+}</mark>

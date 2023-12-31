@@ -1,0 +1,8 @@
+function getRectArea(width, height) {
+  if (width > 0 && height > 0) {
+    <mark>return width * height;</mark>
+  }
+  <mark>return 0;</mark>
+}
+
+console.log(getRectArea(3, 4)); // 12

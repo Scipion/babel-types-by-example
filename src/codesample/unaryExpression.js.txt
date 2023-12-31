@@ -3,3 +3,5 @@ const t = <mark>typeof {}</mark>;
 const inverse = <mark>-x</mark>;
 
 const pos = <mark>+i</mark>;
+
+<mark>delete Employee.firstname</mark>;

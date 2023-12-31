@@ -1,0 +1,7 @@
+<mark>throw error;</mark>
+
+<mark>throw new Error();</mark>
+
+<mark>throw (
+  new Error()
+);</mark>
