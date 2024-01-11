@@ -1,0 +1,6 @@
+const fetchUsers = async () => {
+  const resp = <mark>await fetch('https://example.com/users')</mark>;
+  users = resp.json();
+}
+
+<mark>await fetchUsers()</mark>;

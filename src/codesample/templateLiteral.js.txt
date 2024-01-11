@@ -1,1 +1,3 @@
 <mark>`a ${b} c`</mark>
+
+const doc = html<mark>`<canvas>\n</canvas>`</mark>;

@@ -1,0 +1,1 @@
+import <mark>* as localname</mark> from "module-name";

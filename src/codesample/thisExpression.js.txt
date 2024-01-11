@@ -1,0 +1,34 @@
+const test = {
+  prop: 42,
+  func: function () {
+    return <mark>this</mark>.prop;
+  },
+};
+
+console.log(test.func()); // 42
+
+//
+
+function C() {
+  <mark>this</mark>.a = 37;
+}
+
+let o = new C();
+console.log(o.a); // 37
+
+//
+
+class X {
+  instanceField = <mark>this</mark>;
+  static staticField = <mark>this</mark>;
+}
+
+const x = new X();
+
+//
+
+const obj = {
+  a: <mark>this</mark>,
+};
+
+console.log(obj.a === window); // true

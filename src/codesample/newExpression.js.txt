@@ -1,0 +1,26 @@
+function Car() {}
+
+const car1 = <mark>new</mark> Car();
+const car2 = <mark>new</mark> Car();
+
+//
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+const p = <mark>new</mark> Person("Caroline");
+
+//
+
+function Foo() {
+  // not NewExpression but MetaProperty
+  if (!new.target) {
+    throw new TypeError('calling Foo constructor without new is invalid');
+  }
+}

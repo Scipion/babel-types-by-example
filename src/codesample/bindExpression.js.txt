@@ -1,0 +1,9 @@
+import { map, takeWhile, forEach } from "iterlib";
+
+<mark><mark><mark>getPlayers()
+  ::map</mark>(x => x.character())
+  ::takeWhile</mark>(x => x.strength > 100)
+  ::forEach</mark>(x => console.log(x));
+
+
+Promise.resolve(123).then(<mark>::console.log</mark>);
