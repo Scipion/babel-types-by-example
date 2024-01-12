@@ -1,5 +1,5 @@
 const a = <mark>1n</mark> + <mark>2n</mark>; // 3n
 
-const b = <mark>1n</mark> / <mark>2n</mark>; // 0n
+const b = <mark>1n</mark> \/ <mark>2n</mark>; // 0n
 
 const c = <mark>40000000000000000n</mark> >> <mark>2n</mark>; // 10000000000000000n

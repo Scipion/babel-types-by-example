@@ -1,0 +1,5 @@
+let decimal: <mark>number</mark> = 6;
+let hex: <mark>number</mark> = 0xf00d;
+let binary: <mark>number</mark> = 0b1010;
+let octal: <mark>number</mark> = 0o744;
+let big: bigint = 100n;

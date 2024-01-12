@@ -1,0 +1,7 @@
+const decimal = <mark>100m</mark>;
+const bigInt = 100n;
+const numeric =100;
+
+<mark>0.1999999991m</mark>;
+
+<mark>0.1m</mark> + <mark>0.2m</mark> === <mark>0.3m</mark>; // -> true
