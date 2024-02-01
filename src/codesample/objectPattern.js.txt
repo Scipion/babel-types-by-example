@@ -1,0 +1,6 @@
+function foo(<mark>{ name, address }</mark>) {
+  
+  const <mark>{ street }</mark> = address;
+
+  //..
+}

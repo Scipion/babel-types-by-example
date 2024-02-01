@@ -15,7 +15,7 @@ const readme = [
 
 ## Disclamer
 
-This is NOT the official documentation of @bable/types, just a nicer presentation of it. It can be outdated.
+This is NOT the official documentation of @bable/types, just a presentation guided by examples of it. It can be outdated.
 If you're looking the official docs you can find them [here](https://babeljs.io/docs/babel-types).
 
 > This module contains methods for building ASTs manually and for checking the types of AST nodes.

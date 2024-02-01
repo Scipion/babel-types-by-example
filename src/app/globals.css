@@ -139,20 +139,10 @@ h1 {
   font-size: 3rem;
 }
 
-/* h3 {
-  counter-reset: h4;
-}
-
 h4 {
-  counter-increment: h4;
-  display: list-item;
-  margin-left: 50px;
+  margin-block-start: 4rem;
+  text-decoration: underline;
 }
-
-h4::marker {
-  display: list-item;
-  content: "#" counter(h4) " ";
-} */
 
 pre {
   background-color: var(--highlighted-background-color);
