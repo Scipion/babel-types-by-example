@@ -5,6 +5,7 @@ import githubIcon from "@/components/github-142-svgrepo-com.svg";
 import babelIcon from "@/components/babel-svgrepo-com.svg";
 import babel2Icon from "@/components/babel2-svgrepo-com.svg";
 import treeIcon from "@/components/tree-structure-svgrepo-com.svg";
+import routesConfig from "../../routes.config.mjs";
 
 const ICON_SIZE = 30;
 
@@ -13,20 +14,21 @@ export const Sidebar: FC<PropsWithChildren> = ({ children }) => {
     <aside className="sidebar flex flex-col top-0 sticky overflow-y-auto max-h-screen min-w-max px-3">
       <header>
         <h3>
-          <a href="/" className="text-black">
+          <Link href={routesConfig.home} className="text-black">
             @babel/types by example
-          </a>
+          </Link>
         </h3>
       </header>
       <nav>{children}</nav>
       <footer className="text-center mt-5 mb-10">
         <p>
-          <a
+          <Link
             href="https://github.com/Scipion/babel-types-by-example"
             className="text-orange-500"
+            target="_blank"
           >
             @babel/types by example
-          </a>
+          </Link>
         </p>
         <div className="flex justify-center space-x-4">
           <Link
