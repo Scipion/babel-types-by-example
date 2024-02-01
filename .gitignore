@@ -13,9 +13,6 @@
 /.next/
 /out/
 
-# todo: remove
-/docs/
-
 # production
 /build
 
