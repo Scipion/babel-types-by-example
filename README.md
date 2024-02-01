@@ -8,9 +8,9 @@ This is a [Next.js](https://nextjs.org/) app to enrich the official documentatio
 
 ## Motivation
 
-On the process of learing babel and how to develop babel plugins I've used [astexplorer.net](https://astexplorer.net/) (as I think everybody learing does) and checking back end forth the original babel documentation.
+On the process of learing babel and how to develop babel plugins I've used [astexplorer.net](https://astexplorer.net/) (as I think everybody learing does) and checking back end forth the [babel original documentation](https://babeljs.io/docs/babel-types).
 
-At some point I thought it would be nice to have them both togueder guided by examples.
+At some point I thought it would be nice to have them both together. This Docs are the @babel/types generated MD's, but guided by examples of code highlighting each token in a example.
 
 ## Getting Started
 
