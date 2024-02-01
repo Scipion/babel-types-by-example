@@ -1,5 +1,5 @@
 1:HL["https://scipion.github.io/babel-types-by-example/_next/static/css/4ffa6113f31fdd41.css","style",{"crossOrigin":""}]
-0:["J-y8Xvvmv_Wm7TE8mMLnI",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://scipion.github.io/babel-types-by-example/_next/static/css/4ffa6113f31fdd41.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+0:["XYbtd5A1pFQ5Fbc1GRwIf",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://scipion.github.io/babel-types-by-example/_next/static/css/4ffa6113f31fdd41.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
 4:HL["https://scipion.github.io/babel-types-by-example/_next/static/css/f16eaa9e44b97d3f.css","style",{"crossOrigin":""}]
 5:I[2073,["876","static/chunks/876-386bb431b8640fad.js","185","static/chunks/app/layout-1dd846917e413d1d.js"],""]
 6:I[4435,["876","static/chunks/876-386bb431b8640fad.js","185","static/chunks/app/layout-1dd846917e413d1d.js"],"Image"]
