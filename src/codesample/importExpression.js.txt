@@ -1,0 +1,3 @@
+// New in Babel 8.
+
+<mark>import("foo", options)</mark>;
