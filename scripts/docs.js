@@ -99,6 +99,8 @@ const aliasDescriptions = {
     "A cover of functions and [method](#method)s, the must have `body` and `params`. Note: `Function` is different to `FunctionParent`. For example, a `StaticBlock` is a `FunctionParent` but not `Function`.",
   FunctionParent:
     "A cover of AST nodes that start an execution context with new [VariableEnvironment](https://tc39.es/ecma262/#table-additional-state-components-for-ecmascript-code-execution-contexts). In other words, they define the scope of `var` declarations. FunctionParent did not include `Program` since Babel 7.",
+  FunctionParameter:
+    "A cover of function parameters. They are the elements of [FormalParameterList](https://tc39.es/ecma262/#prod-FormalParameterList).",
   Immutable:
     "A cover of immutable objects and JSX elements. An object is [immutable](https://tc39.es/ecma262/#immutable-prototype-exotic-object) if no other properties can be defined once created.",
   ImportOrExportDeclaration:
@@ -149,7 +151,7 @@ const aliasDeprecationNotes = {
 
 function formatHistory(historyItems) {
   const lines = historyItems.map(
-    (item) => "| `" + item[0] + "` | " + item[1] + " |"
+    (item) => "| `" + item[0] + "` | " + item[1] + " |",
   );
   return [
     "<details>",
@@ -189,12 +191,12 @@ function printNodeFields(key, readme) {
         } else if (validator) {
           try {
             fieldDescription.push(
-              ": " + stringifyValidator(validator, "") + ""
+              ": " + stringifyValidator(validator, "") + "",
             );
           } catch (ex) {
             if (ex.code === "UNEXPECTED_VALIDATOR_TYPE") {
               console.log(
-                "Unrecognised validator type for " + key + "." + field
+                "Unrecognised validator type for " + key + "." + field,
               );
               console.dir(ex.validator, { depth: 10, colors: true });
             }
@@ -202,7 +204,7 @@ function printNodeFields(key, readme) {
         }
         if (defaultValue !== null || t.NODE_FIELDS[key][field].optional) {
           fieldDescription.push(
-            " (default: `" + util.inspect(defaultValue) + "`"
+            " (default: `" + util.inspect(defaultValue) + "`",
           );
           if (t.BUILDER_KEYS[key].indexOf(field) < 0) {
             fieldDescription.push(", excluded from builder function");
@@ -225,7 +227,7 @@ function printAliasKeys(key, readme) {
           .map(function (key) {
             return "[`" + key + "`](#" + key.toLowerCase() + ")";
           })
-          .join(", ")
+          .join(", "),
     );
   }
 }
@@ -236,22 +238,22 @@ Object.keys(t.BUILDER_KEYS)
   .sort()
   .forEach(function (key) {
     contentTable.push(
-      ` - [${toFunctionName(key)}](#${key.toLocaleLowerCase()})`
+      ` - [${toFunctionName(key)}](#${key.toLocaleLowerCase()})`,
     );
     readme.push(
-      "#### " + toFunctionName(key) + "[#](#" + key.toLowerCase() + ")"
+      "#### " + toFunctionName(key) + "[#](#" + key.toLowerCase() + ")",
     );
     readme.push("");
     readme.push(
       `<Code language="javascript">${
         "t." + toFunctionName(key) + "(" + t.BUILDER_KEYS[key].join(", ") + ");"
-      }</Code>`
+      }</Code>`,
     );
     readme.push(`*${key}*`);
     readme.push(
       `<Code file="${
         "/src/codesample/" + toFunctionName(key) + ".js.txt"
-      }" type="${key}"/>`
+      }" type="${key}"/>`,
     );
     printAPIHistory(key, readme);
     readme.push("");
@@ -260,7 +262,7 @@ Object.keys(t.BUILDER_KEYS)
         key +
         "(node, opts)` and `t.assert" +
         key +
-        "(node, opts)`."
+        "(node, opts)`.",
     );
 
     printNodeFields(key, readme);
@@ -309,11 +311,16 @@ for (const alias of [...mapAliasToNodeTypes.keys()].sort()) {
       aliasDescription = `:::caution\n\n${aliasDescription}\n\n:::`;
       aliasDescriptions[alias] = aliasDescription;
     } else {
+      console.log(
+        `Missing alias description of "${alias}", which covers ${nodeTypes.join(",")}. Please add it to the "aliasDescriptions" object in scripts/docs.js.`,
+      );
+      console.log(alias);
+      console.log(nodeTypes.join(","));
       throw new Error(
         'Missing alias descriptions of "' +
           alias +
           ", which covers " +
-          nodeTypes.join(",")
+          nodeTypes.join(","),
       );
     }
   }
@@ -322,7 +329,7 @@ for (const alias of [...mapAliasToNodeTypes.keys()].sort()) {
   readme.push("");
   readme.push(aliasDescriptions[alias]);
   readme.push(
-    `<Code language="javascript">${"t.is" + alias + "(node);"}</Code>`
+    `<Code language="javascript">${"t.is" + alias + "(node);"}</Code>`,
   );
   readme.push("");
   readme.push("Covered nodes:");
