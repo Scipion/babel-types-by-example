@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[67752,["https://scipion.github.io/babel-types-by-example/_next/static/chunks/14rem0kqxf706.js","https://scipion.github.io/babel-types-by-example/_next/static/chunks/038wfsemswm1j.js"],"default"]
+3:I[92783,["https://scipion.github.io/babel-types-by-example/_next/static/chunks/14rem0kqxf706.js","https://scipion.github.io/babel-types-by-example/_next/static/chunks/038wfsemswm1j.js"],"default"]
+4:[]
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"UImJH3E9G5nyOCboBu_KQ"}
