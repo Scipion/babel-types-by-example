@@ -2,4 +2,4 @@
 2:I[50686,["https://scipion.github.io/babel-types-by-example/_next/static/chunks/0wf9262k9a_ka.js","https://scipion.github.io/babel-types-by-example/_next/static/chunks/0i.wsupuox09a.js"],"default"]
 3:I[85451,["https://scipion.github.io/babel-types-by-example/_next/static/chunks/0wf9262k9a_ka.js","https://scipion.github.io/babel-types-by-example/_next/static/chunks/0i.wsupuox09a.js"],"default"]
 4:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"Hr3S3wHjQqldMtCSx3X5f"}
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"iMQ0q0uRgSYORJHixm2AG"}
